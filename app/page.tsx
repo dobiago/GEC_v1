@@ -8,7 +8,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_22%,rgba(255,255,255,0.08),transparent_28%),radial-gradient(circle_at_85%_35%,rgba(94,126,168,0.2),transparent_30%),linear-gradient(to_bottom,rgba(255,255,255,0.02),rgba(255,255,255,0))]" />
 
         <div className="relative grid h-full items-center gap-6 md:gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="order-2 flex flex-col justify-center space-y-5 pb-8 lg:order-1 lg:max-w-[34rem] lg:pb-0">
+          <div className="order-2 flex flex-col justify-center space-y-5 pb-12 md:pb-8 lg:order-1 lg:max-w-[34rem] lg:pb-0">
             <h1 className="text-5xl font-medium tracking-[-0.07em] text-white sm:text-6xl lg:text-7xl">
               GEC Petroleum Development Company
             </h1>
