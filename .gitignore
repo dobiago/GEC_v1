@@ -1,0 +1,20 @@
+node_modules
+.next
+out
+dist
+build
+.env
+.env.local
+*.log
+.DS_Store
+
+# Additional Next.js / TypeScript build artifacts
+.next-build
+.next-build-verify
+.next-build-verify-2
+.next-build-verify-3
+.next-build-verify-4
+*.tsbuildinfo
+*.err
+tmp_gec_about
+tmp_gec_about.docx
