@@ -3,7 +3,7 @@ import { services } from "@/lib/site-data"
 
 export default function ServicesPage() {
   return (
-    <main className="w-full bg-black pt-32 text-white">
+    <main className="w-full pt-28 text-slate-900">
       <section className="w-full px-6 pb-16 md:px-12">
         <SectionHeading
           eyebrow="Services"
@@ -15,9 +15,12 @@ export default function ServicesPage() {
       <section className="w-full px-6 pb-24 md:px-12">
         <div className="grid w-full gap-6 md:grid-cols-2">
           {services.map((service) => (
-            <div key={service.title} className="rounded-[28px] border border-white/10 bg-white/[0.03] p-7">
-              <p className="text-xs uppercase tracking-[0.28em] text-zinc-500">{service.title}</p>
-              <p className="mt-5 text-lg leading-8 text-zinc-300">{service.description}</p>
+            <div
+              key={service.title}
+              className="rounded-[28px] border border-slate-200 bg-white/90 p-7 shadow-[0_24px_70px_rgba(37,62,92,0.08)]"
+            >
+              <p className="text-xs uppercase tracking-[0.28em] text-slate-500">{service.title}</p>
+              <p className="mt-5 text-lg leading-8 text-slate-700">{service.description}</p>
             </div>
           ))}
         </div>

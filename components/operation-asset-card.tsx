@@ -10,13 +10,13 @@ export function OperationAssetCard({ href, title, imageSrc }: OperationAssetCard
   return (
     <Link
       href={href}
-      className="group flex h-full min-h-[220px] flex-col justify-between rounded-[28px] border border-white/10 bg-white/[0.03] p-5 transition duration-300 hover:scale-[1.01] hover:border-white/20 hover:bg-white/[0.05]"
+      className="group flex h-full min-h-[260px] flex-col justify-between rounded-[30px] border border-slate-200 bg-white/92 p-5 shadow-[0_24px_70px_rgba(37,62,92,0.08)] transition duration-300 hover:-translate-y-1 hover:border-slate-300"
     >
       <div
-        className="aspect-video w-full rounded-[22px] border border-white/10 bg-zinc-950 bg-cover bg-center"
+        className="aspect-video w-full rounded-[24px] border border-slate-200 bg-slate-100 bg-cover bg-center"
         style={imageSrc ? { backgroundImage: `url(${imageSrc})` } : undefined}
       />
-      <p className="mt-5 text-xl font-medium tracking-[-0.03em] text-white">{title}</p>
+      <p className="mt-5 text-xl font-semibold tracking-[-0.03em] text-slate-950">{title}</p>
     </Link>
   )
 }

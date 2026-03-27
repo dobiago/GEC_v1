@@ -1,14 +1,5 @@
-import { AboutContentPage } from "@/components/about-content-page"
-import { aboutSectionLookup } from "@/lib/about-data"
+import { redirect } from "next/navigation"
 
 export default function StrategicFocusPage() {
-  const section = aboutSectionLookup["strategic-focus"]
-
-  return (
-    <AboutContentPage
-      title={section.title}
-      blocks={section.blocks}
-      imageSrc="/about/about_strategicfocus.png"
-    />
-  )
+  redirect("/about#strategic-focus")
 }

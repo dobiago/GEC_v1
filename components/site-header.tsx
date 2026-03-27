@@ -36,11 +36,11 @@ export function SiteHeader() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled
-          ? "border-b border-white/10 bg-black/85 backdrop-blur-xl"
+          ? "border-b border-slate-200/70 bg-white/88 shadow-[0_20px_60px_rgba(39,66,94,0.08)] backdrop-blur-xl"
           : "bg-transparent"
       )}
     >
-      <div className="flex h-18 w-full items-center justify-between px-6 md:px-12">
+      <div className="flex h-[76px] w-full items-center justify-between px-6 md:px-12">
         <Link href="/" className="flex items-center leading-none">
           <Image
             src="/gec-logo.png"
@@ -58,18 +58,18 @@ export function SiteHeader() {
               <div key={item.href} className="group relative">
                 <Link
                   href={item.href}
-                  className="inline-flex items-center gap-2 text-sm tracking-[0.08em] text-zinc-300 transition hover:text-white"
+                  className="inline-flex items-center gap-2 text-sm tracking-[0.06em] text-slate-600 transition hover:text-slate-950"
                 >
                   {item.label}
                   <ChevronDown className="size-3.5 transition group-hover:rotate-180" />
                 </Link>
                 <div className="pointer-events-none absolute left-0 top-full pt-4 opacity-0 transition duration-200 group-hover:pointer-events-auto group-hover:opacity-100">
-                  <div className="min-w-[220px] rounded-2xl border border-white/10 bg-black/95 p-2 shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl">
+                  <div className="min-w-[260px] rounded-3xl border border-slate-200 bg-white/95 p-2 shadow-[0_20px_60px_rgba(39,66,94,0.14)] backdrop-blur-xl">
                     {item.children.map((child) => (
                       <Link
                         key={child.href}
                         href={child.href}
-                        className="block rounded-xl px-4 py-3 text-sm tracking-[0.04em] text-zinc-300 transition hover:bg-white/[0.04] hover:text-white"
+                        className="block rounded-2xl px-4 py-3 text-sm tracking-[0.03em] text-slate-600 transition hover:bg-slate-100 hover:text-slate-950"
                       >
                         {child.label}
                       </Link>
@@ -81,7 +81,7 @@ export function SiteHeader() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm tracking-[0.08em] text-zinc-300 transition hover:text-white"
+                className="text-sm tracking-[0.06em] text-slate-600 transition hover:text-slate-950"
               >
                 {item.label}
               </Link>
@@ -92,7 +92,7 @@ export function SiteHeader() {
         <button
           type="button"
           aria-label="Toggle navigation"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-zinc-200 transition hover:border-white/20 hover:text-white md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 bg-white/80 text-slate-700 transition hover:border-slate-400 hover:text-slate-950 md:hidden"
           onClick={() => setOpen((value) => !value)}
         >
           {open ? <X className="size-4" /> : <Menu className="size-4" />}
@@ -100,7 +100,7 @@ export function SiteHeader() {
       </div>
 
       {open ? (
-        <div className="border-t border-white/10 bg-black/95 px-6 py-4 md:hidden">
+        <div className="border-t border-slate-200 bg-white/95 px-6 py-4 shadow-[0_12px_40px_rgba(39,66,94,0.08)] md:hidden">
           <nav className="flex flex-col gap-4">
             {navigation.map((item) => (
               item.children ? (
@@ -108,7 +108,7 @@ export function SiteHeader() {
                   <div className="flex items-center justify-between">
                     <Link
                       href={item.href}
-                      className="text-sm tracking-[0.08em] text-zinc-300 transition hover:text-white"
+                      className="text-sm tracking-[0.06em] text-slate-700 transition hover:text-slate-950"
                       onClick={() => setOpen(false)}
                     >
                       {item.label}
@@ -116,7 +116,7 @@ export function SiteHeader() {
                     <button
                       type="button"
                       aria-label={`Toggle ${item.label} menu`}
-                      className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/10 text-zinc-300"
+                      className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-slate-300 text-slate-600"
                       onClick={() =>
                         setMobileDropdownOpen((value) => (value === item.href ? null : item.href))
                       }
@@ -130,12 +130,12 @@ export function SiteHeader() {
                     </button>
                   </div>
                   {mobileDropdownOpen === item.href ? (
-                    <div className="ml-3 flex flex-col gap-2 border-l border-white/10 pl-4">
+                    <div className="ml-3 flex flex-col gap-2 border-l border-slate-200 pl-4">
                       {item.children.map((child) => (
                         <Link
                           key={child.href}
                           href={child.href}
-                          className="text-sm tracking-[0.04em] text-zinc-400 transition hover:text-white"
+                          className="text-sm tracking-[0.03em] text-slate-500 transition hover:text-slate-900"
                           onClick={() => {
                             setOpen(false)
                             setMobileDropdownOpen(null)
@@ -151,7 +151,7 @@ export function SiteHeader() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-sm tracking-[0.08em] text-zinc-300 transition hover:text-white"
+                  className="text-sm tracking-[0.06em] text-slate-700 transition hover:text-slate-950"
                   onClick={() => setOpen(false)}
                 >
                   {item.label}
