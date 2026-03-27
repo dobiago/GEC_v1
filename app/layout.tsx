@@ -6,7 +6,7 @@ import { SiteHeader } from "@/components/site-header"
 
 export const metadata: Metadata = {
   title: "GEC Petroleum Development Company",
-  description: "Independent upstream oil and gas operator.",
+  description: "Indigenous Energy. Enduring Impact.",
 }
 
 export default function RootLayout({
@@ -15,8 +15,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className="bg-black text-white antialiased">
+    <html lang="en">
+      <body>
         <SiteHeader />
         {children}
         <SiteFooter />

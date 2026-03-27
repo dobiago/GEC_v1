@@ -43,38 +43,38 @@ export function ContactForm() {
 
   return (
     <form
-      className="space-y-5 rounded-[28px] border border-white/10 bg-white/[0.03] p-6 sm:p-8"
+      className="space-y-5 rounded-[32px] border border-slate-200 bg-white/90 p-6 shadow-[0_30px_80px_rgba(37,62,92,0.08)] sm:p-8"
       onSubmit={handleSubmit}
     >
       <div className="grid gap-5 sm:grid-cols-2">
         <label className="space-y-2">
-          <span className="text-xs uppercase tracking-[0.24em] text-zinc-500">Name</span>
+          <span className="text-xs uppercase tracking-[0.24em] text-slate-500">Name</span>
           <input
             required
             name="name"
-            className="h-12 w-full rounded-2xl border border-white/10 bg-black/40 px-4 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-white/25"
+            className="h-12 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-sky-400"
             placeholder="Your name"
           />
         </label>
         <label className="space-y-2">
-          <span className="text-xs uppercase tracking-[0.24em] text-zinc-500">Email</span>
+          <span className="text-xs uppercase tracking-[0.24em] text-slate-500">Email</span>
           <input
             required
             type="email"
             name="email"
-            className="h-12 w-full rounded-2xl border border-white/10 bg-black/40 px-4 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-white/25"
+            className="h-12 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-sky-400"
             placeholder="name@company.com"
           />
         </label>
       </div>
 
       <label className="block space-y-2">
-        <span className="text-xs uppercase tracking-[0.24em] text-zinc-500">Message</span>
+        <span className="text-xs uppercase tracking-[0.24em] text-slate-500">Message</span>
         <textarea
           required
           name="message"
           rows={6}
-          className="w-full rounded-[24px] border border-white/10 bg-black/40 px-4 py-3 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-white/25"
+          className="w-full rounded-[24px] border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-sky-400"
           placeholder="Outline your project, basin, or operating requirement."
         />
       </label>
@@ -83,12 +83,12 @@ export function ContactForm() {
         <Button
           type="submit"
           size="lg"
-          className="h-12 rounded-full bg-white px-6 text-sm tracking-[0.08em] text-black hover:bg-zinc-200"
+          className="h-12 rounded-full bg-slate-900 px-6 text-sm tracking-[0.08em] text-white hover:bg-slate-800"
           disabled={status === "sending"}
         >
           {status === "sending" ? "Sending" : "Send enquiry"}
         </Button>
-        {message ? <p className="text-sm text-zinc-400">{message}</p> : null}
+        {message ? <p className="text-sm text-slate-500">{message}</p> : null}
       </div>
     </form>
   )

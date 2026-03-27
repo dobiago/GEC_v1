@@ -3,110 +3,67 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
-import { aboutNavigationItems, aboutTeamMembers } from "@/lib/about-data"
-import { offshoreOperations, onshoreOperations, operationsPreviewSections } from "@/lib/site-data"
+import { aboutTeamLookup } from "@/lib/about-data"
+import { operationsAssets } from "@/lib/site-data"
 
 type BreadcrumbItem = {
   href?: string
   label: string
 }
 
-const categoryLabels = Object.fromEntries(
-  operationsPreviewSections.map((section) => [section.slug, section.title]),
-)
+const assetLabelLookup = Object.fromEntries(operationsAssets.map((asset) => [asset.slug, asset.title]))
 
-const assetLabels = Object.fromEntries(
-  [...onshoreOperations, ...offshoreOperations].map((asset) => [asset.slug, asset.title]),
-)
-
-const aboutSectionLabels = Object.fromEntries(
-  aboutNavigationItems
-    .filter((item) => item.slug !== "who-we-are")
-    .map((item) => [item.slug, item.title]),
-)
-
-const aboutTeamLabels = Object.fromEntries(aboutTeamMembers.map((member) => [member.slug, member.name]))
-
-function getOperationsBreadcrumbs(pathname: string): BreadcrumbItem[] {
+function getBreadcrumbs(pathname: string): BreadcrumbItem[] {
   const segments = pathname.split("/").filter(Boolean)
 
-  if (segments[0] !== "operations") {
+  if (segments.length === 0) {
     return []
   }
 
-  const items: BreadcrumbItem[] = [{ label: "Operations" }]
+  if (segments[0] === "about") {
+    const items: BreadcrumbItem[] = [{ href: "/about", label: "About" }]
 
-  if (segments.length === 1) {
-    return items
-  }
-
-  items[0].href = "/operations"
-
-  const category = segments[1]
-  const categoryLabel = categoryLabels[category]
-
-  if (!categoryLabel) {
-    return items
-  }
-
-  items.push({
-    href: segments.length > 2 ? `/operations/${category}` : undefined,
-    label: categoryLabel,
-  })
-
-  if (segments.length > 2) {
-    items.push({ label: assetLabels[segments[2]] ?? segments[2] })
-  }
-
-  return items
-}
-
-function getAboutBreadcrumbs(pathname: string): BreadcrumbItem[] {
-  const segments = pathname.split("/").filter(Boolean)
-
-  if (segments[0] !== "about") {
-    return []
-  }
-
-  const items: BreadcrumbItem[] = [{ label: "About" }]
-
-  if (segments.length === 1) {
-    return items
-  }
-
-  items[0].href = "/about"
-
-  const section = segments[1]
-
-  if (section === "team") {
-    items.push({
-      href: segments.length > 2 ? "/about/team" : undefined,
-      label: "Our Team",
-    })
-
-    if (segments.length > 2) {
-      items.push({ label: aboutTeamLabels[segments[2]] ?? segments[2] })
+    if (segments[1] === "team" && segments[2]) {
+      items.push({ href: "/about#our-team", label: "Our Team" })
+      items.push({ label: aboutTeamLookup[segments[2]]?.name ?? segments[2] })
     }
 
     return items
   }
 
-  const sectionLabel = aboutSectionLabels[section]
+  if (segments[0] === "operations") {
+    const items: BreadcrumbItem[] = [{ href: "/operations", label: "Operations" }]
 
-  if (!sectionLabel) {
+    if (segments[1]) {
+      const category = segments[1] === "onshore" ? "Onshore Assets" : "Offshore Assets"
+      items.push({ href: `/operations#${segments[1]}-assets`, label: category })
+    }
+
+    if (segments[2]) {
+      items.push({ label: assetLabelLookup[segments[2]] ?? segments[2] })
+    }
+
     return items
   }
 
-  items.push({ label: sectionLabel })
+  if (segments[0] === "csr") {
+    return [{ label: "CSR" }]
+  }
 
-  return items
+  if (segments[0] === "news") {
+    return [{ label: "GEC in the News" }]
+  }
+
+  if (segments[0] === "contact") {
+    return [{ label: "Contact" }]
+  }
+
+  return []
 }
 
 export function OperationsBreadcrumb() {
   const pathname = usePathname()
-  const items = getOperationsBreadcrumbs(pathname).length
-    ? getOperationsBreadcrumbs(pathname)
-    : getAboutBreadcrumbs(pathname)
+  const items = getBreadcrumbs(pathname)
 
   if (items.length === 0) {
     return null
@@ -114,18 +71,18 @@ export function OperationsBreadcrumb() {
 
   return (
     <nav aria-label="Breadcrumb" className="mb-6">
-      <ol className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs uppercase tracking-[0.24em] text-zinc-500">
+      <ol className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[0.68rem] uppercase tracking-[0.24em] text-slate-500">
         {items.map((item, index) => {
           const isLast = index === items.length - 1
 
           return (
             <li key={`${item.label}-${index}`} className="flex items-center gap-2">
               {item.href && !isLast ? (
-                <Link href={item.href} className="transition-colors duration-200 hover:text-white">
+                <Link href={item.href} className="transition-colors hover:text-slate-900">
                   {item.label}
                 </Link>
               ) : (
-                <span className={isLast ? "text-zinc-300" : undefined}>{item.label}</span>
+                <span className={isLast ? "text-slate-800" : undefined}>{item.label}</span>
               )}
               {!isLast ? <span aria-hidden="true">/</span> : null}
             </li>
