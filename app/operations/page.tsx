@@ -4,7 +4,7 @@ import Link from "next/link"
 import { SectionHeading } from "@/components/section-heading"
 import { SectionSubnav } from "@/components/section-subnav"
 import {
-  gasStrategySections,
+  gasStrategyContent,
   offshoreOperations,
   onshoreOperations,
   operationsOverview,
@@ -55,48 +55,64 @@ function AssetSection({
         {assets.map((asset) => (
           <article
             key={asset.slug}
-            className="grid gap-6 rounded-sm border border-slate-200 bg-[#EDE9D0]/80 p-6 lg:grid-cols-[0.34fr_0.66fr]"
+            className="grid gap-5 rounded-sm border border-slate-200 bg-[#EDE9D0]/80 p-4 shadow-[0_18px_50px_rgba(58,0,30,0.08)] sm:p-5 lg:gap-6 lg:p-6 lg:shadow-none lg:grid-cols-[0.34fr_0.66fr]"
           >
-            <div className="space-y-4">
-              <Link
-                href={asset.href}
-                className="block transition hover:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-600/60 focus-visible:ring-offset-2"
-              >
-                <div
-                  className="aspect-[4/3] rounded-[24px] border border-slate-200 bg-slate-100 bg-cover bg-center"
-                  style={{ backgroundImage: `url(${asset.imageSrc})` }}
-                />
-              </Link>
-              <div className="rounded-sm border border-slate-200 bg-white p-5">
+            <div className="space-y-4 lg:space-y-4">
+              <div className="w-full">
+                <Link
+                  href={asset.href}
+                  className="block w-full transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-600/60 focus-visible:ring-offset-2"
+                >
+                  <div
+                    className="aspect-[16/9] w-full rounded-sm border border-slate-200 bg-slate-100 bg-cover bg-center md:aspect-[4/3]"
+                    style={{ backgroundImage: `url(${asset.imageSrc})` }}
+                  />
+                </Link>
+              </div>
+              <div className="hidden rounded-sm border border-slate-200 bg-white p-5 lg:block">
                 <p className="text-xs uppercase tracking-[0.24em] text-slate-500">Map / location</p>
                 <p className="mt-3 text-sm leading-7 text-slate-700">{asset.mapLabel}</p>
               </div>
             </div>
-            <div className="space-y-5">
+            <div className="space-y-4 lg:space-y-5">
               <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
                 <div>
-                  <h3 className="text-3xl font-semibold tracking-[-0.05em] text-slate-950">
+                  <h3 className="text-2xl font-semibold tracking-[-0.05em] text-slate-950 lg:text-3xl">
                     {asset.title}
                   </h3>
-                  <p className="mt-3 max-w-2xl text-base leading-8 text-slate-600">{asset.intro}</p>
+                  <div className="hidden md:block">
+                    <p className="mt-2 max-w-2xl text-[0.95rem] leading-7 text-slate-600 lg:mt-3 lg:text-base lg:leading-8">
+                      {asset.intro}
+                    </p>
+                  </div>
                 </div>
                 <Link
                   href={asset.href}
-                  className="text-xs font-semibold uppercase tracking-[0.28em] text-amber-600 transition hover:text-amber-700"
+                  className="text-xs font-semibold uppercase tracking-[0.28em] text-amber-600 transition hover:text-amber-700 md:pt-1"
                 >
                   Asset detail <span aria-hidden="true">{"\u2192"}</span>
                 </Link>
               </div>
-              <div className="grid gap-4 md:grid-cols-2">
-                {asset.facts.map((fact) => (
-                  <div
-                    key={`${asset.slug}-${fact.label}`}
-                    className="rounded-sm border border-slate-200 bg-white p-5"
-                  >
-                    <p className="text-xs uppercase tracking-[0.18em] text-slate-500">{fact.label}</p>
-                    <p className="mt-3 text-base font-semibold leading-7 text-slate-900">{fact.value}</p>
-                  </div>
-                ))}
+              <div className="hidden md:block">
+                <div className="-mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-1 md:mx-0 md:grid md:gap-4 md:overflow-visible md:px-0 md:pb-0 md:grid-cols-2">
+                  {asset.facts.map((fact) => (
+                    <div
+                      key={`${asset.slug}-${fact.label}`}
+                      className="min-w-[13rem] snap-start rounded-[20px] border border-slate-200 bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(237,233,208,0.72))] p-4 shadow-[0_14px_34px_rgba(58,0,30,0.06)] md:min-w-0 md:rounded-sm md:bg-white md:p-5 md:shadow-none"
+                    >
+                      <p className="text-xs font-semibold uppercase tracking-[0.28em] text-amber-600 md:tracking-[0.18em] md:text-slate-500">
+                        {fact.label}
+                      </p>
+                      <p className="mt-3 text-base font-semibold leading-7 text-slate-900">{fact.value}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="hidden md:block">
+                <div className="rounded-sm border border-slate-200 bg-white p-5 lg:hidden">
+                  <p className="text-xs uppercase tracking-[0.24em] text-slate-500">Map / location</p>
+                  <p className="mt-3 text-sm leading-7 text-slate-700">{asset.mapLabel}</p>
+                </div>
               </div>
             </div>
           </article>
@@ -151,35 +167,23 @@ export default function OperationsPage() {
           </div>
         </section>
 
-        <AssetSection id="onshore-assets" title="Onshore Assets" assets={onshoreOperations} />
         <AssetSection id="offshore-assets" title="Offshore Assets" assets={offshoreOperations} />
+        <AssetSection id="onshore-assets" title="Onshore Assets" assets={onshoreOperations} />
 
         <section
           id="gas-strategy"
           className="scroll-mt-32 rounded-sm border border-slate-200 bg-[#EDE9D0]/80 p-8 shadow-[0_30px_90px_rgba(58,0,30,0.08)]"
         >
-          <div className="max-w-3xl">
+          <div className="max-w-4xl">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#D8271B]">Gas Strategy</p>
             <h2 className="mt-3 text-3xl font-semibold tracking-[-0.05em] text-slate-950 sm:text-4xl">
-              A clearer gas-led commercialization narrative
+              {gasStrategyContent.title}
             </h2>
-            <p className="mt-4 text-base leading-8 text-slate-600">
-              The onshore network concept explains how OPL 907, OPL 917 and OML 149 connect through
-              aggregation infrastructure, processing and downstream commercialization.
-            </p>
-          </div>
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
-            {gasStrategySections.map((section) => (
-              <article
-                key={section.title}
-                className="rounded-sm border border-slate-200 bg-[#EDE9D0]/80 p-6"
-              >
-                <h3 className="text-2xl font-semibold tracking-[-0.04em] text-slate-950">
-                  {section.title}
-                </h3>
-                <p className="mt-4 text-base leading-8 text-slate-600">{section.body}</p>
-              </article>
-            ))}
+            <div className="mt-6 space-y-5 text-base leading-8 text-slate-600">
+              {gasStrategyContent.body.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
           </div>
         </section>
       </div>

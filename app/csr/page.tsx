@@ -14,8 +14,8 @@ export default function CSRPage() {
         <div className="max-w-4xl">
           <SectionHeading
             eyebrow="Corporate Social Responsibility"
-            title="A new CSR platform with six clear pillars."
-            description="CSR is now a dedicated top-level destination with a structure designed for future approved content, host-community storytelling, and a more contemporary sustainability narrative."
+            title="Sustainability and responsible operations across every part of the business."
+            description="GPDC's CSR framework reflects our commitment to responsible stewardship of the environment, best practice health and safety standards, and sustainable community infrastructural development."
           />
         </div>
       </section>
@@ -42,14 +42,24 @@ export default function CSRPage() {
               </h2>
             </div>
             <div className="space-y-5">
-              <p className="text-base leading-8 text-slate-600">{section.body}</p>
-              <div className="rounded-sm border border-slate-200 bg-white/80 p-5">
-                <p className="text-xs uppercase tracking-[0.22em] text-slate-500">Implementation note</p>
-                <p className="mt-3 text-sm leading-7 text-slate-700">
-                  This layout is ready to receive approved project photography, icons, and final
-                  pillar-specific copy from the GEC team without another IA change.
+              {section.body.map((paragraph) => (
+                <p key={paragraph} className="text-base leading-8 text-slate-600">
+                  {paragraph}
                 </p>
-              </div>
+              ))}
+              {section.items?.length ? (
+                <div className="rounded-sm border border-slate-200 bg-white/80 p-5">
+                  <p className="text-xs uppercase tracking-[0.22em] text-slate-500">Key components</p>
+                  <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-700">
+                    {section.items.map((item) => (
+                      <li key={item} className="flex gap-3">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-600" aria-hidden="true" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
             </div>
           </section>
         ))}
