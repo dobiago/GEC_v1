@@ -50,9 +50,15 @@ export type AssetEntry = {
   title: string
 }
 
+export type GasStrategyContent = {
+  body: string[]
+  title: string
+}
+
 export type CSRSection = {
-  body: string
+  body: string[]
   id: string
+  items?: string[]
   title: string
 }
 
@@ -85,7 +91,15 @@ export const navigation: NavigationItem[] = [
       { href: "/about#careers", label: "Careers" },
     ],
   },
-  { href: "/operations", label: "Operations" },
+  {
+    href: "/operations",
+    label: "Operations",
+    children: [
+      { href: "/operations#offshore-assets", label: "Offshore Assets" },
+      { href: "/operations#onshore-assets", label: "Onshore Assets" },
+      { href: "/operations#gas-strategy", label: "Gas Strategy" },
+    ],
+  },
   { href: "/csr", label: "CSR" },
   { href: "/news", label: "GEC in the News" },
   { href: "/contact", label: "Contact" },
@@ -180,8 +194,8 @@ export const operationsOverview = [
 
 export const operationsSubnav: NavLink[] = [
   { href: "#portfolio-summary", label: "Portfolio Summary" },
-  { href: "#onshore-assets", label: "Onshore" },
   { href: "#offshore-assets", label: "Offshore" },
+  { href: "#onshore-assets", label: "Onshore" },
   { href: "#gas-strategy", label: "Gas Strategy" },
 ]
 
@@ -218,9 +232,7 @@ export const operationsAssets: AssetEntry[] = [
     imageSrc: "/operations/opl_917.jpg",
     intro: "OPL 917 spans an area of approximately 1,702 km2 and is located onshore in the Anambra Basin in the southern part of Nigeria.",
     mapLabel: "Anambra Basin, southern Nigeria",
-    detailMediaSlots: [
-      { alt: "OPL 917 document image 1", fileName: "opl-917-01.png", src: "/operations/detail/opl-917-01.png" },
-    ],
+    detailMediaSlots: [],
     facts: [
       { label: "Acreage", value: "1,702 km2" },
       { label: "In-place gas", value: "Up to 300 Bcf" },
@@ -244,9 +256,7 @@ export const operationsAssets: AssetEntry[] = [
     imageSrc: "/operations/opl_907.jpg",
     intro: "OPL 907 is located onshore Nigeria within the highly prospective Anambra Basin.",
     mapLabel: "Ugwuoba axis, Enugu State",
-    detailMediaSlots: [
-      { alt: "OPL 907 document image 1", fileName: "opl-907-01.png", src: "/operations/detail/opl-907-01.png" },
-    ],
+    detailMediaSlots: [],
     facts: [
       { label: "Acreage", value: "2,284.50 km2" },
       { label: "Akukwa gas volume", value: "400 Bcf in place" },
@@ -313,23 +323,13 @@ export const operationsAssets: AssetEntry[] = [
   },
 ]
 
-export const gasStrategySections = [
-  {
-    title: "Onshore Network",
-    body:
-      "OML 149 and OPL 917 fall within the Central Franchise Area while OPL 907 falls within the Central/Eastern Franchise Area.",
-  },
-  {
-    title: "Aggregation Concept",
-    body:
-      "The concept is to aggregate all gas produced from OPL 907 and OPL 917 and pipe to OML 149's Adofi River location, located in the South West axis of the block.",
-  },
-  {
-    title: "Commercialisation Pathway",
-    body:
-      "Gas aggregation is to be achieved via an 84 km pipeline network from Akukwa-2 to Adofi River in OML 149 with a 12 km connecting gas pipeline from Igbariam-1. The Adofi River will serve as the coagulation hub before transport to the Okpai gas facility and finally to the planned Central Franchise Area (CPF), where gas is sold, swapped and utilised for priority projects such as power generation, methanol, petrochemicals and LNG.",
-  },
-]
+export const gasStrategyContent: GasStrategyContent = {
+  title: "Gas Overview",
+  body: [
+    "With land and offshore acreages of approximately 7500sq km and 800 sq km respectively, and an estimated gas reserve of some 6.4TCF and oil reserves of 1.3billion barrels, GPDC is a major and significant player in the emergent gas play in Nigeria. GPDC's Gas and Power strategy is to establish ownership of feed stock and develop expertise and build assets along the value chain, with an ultimate aim to own power plants, supply gas to them and where possible optimize the portfolio by providing associated or specialized services to the assets.",
+    "In the medium to long term, GPDC will expand its operations into high prospectivity assets in West Africa, whilst pursuing major gas utilization projects in partnership with strategic gas technology companies focused on LNG, GTL, fertilizers, etc. We also have a strong interest in developing a major gas-fired power plant (IPP) utilizing our gas resources in the contract areas to evaluate opportunities in pipeline infrastructure, gas distribution, commodity trading & supplies.",
+  ],
+}
 
 export const onshoreOperations = operationsAssets.filter((asset) => asset.category === "onshore")
 export const offshoreOperations = operationsAssets.filter((asset) => asset.category === "offshore")
@@ -338,38 +338,41 @@ export const csrSections: CSRSection[] = [
   {
     id: "overview",
     title: "Overview",
-    body:
-      "GPDC's CSR platform should communicate responsible operations, host-community alignment, and measurable long-term value creation. This section is a placeholder framework pending final approved content from the GEC team.",
+    body: [
+      "GPDC is a responsible corporate citizen and sustainability is at the heart of all our operations. We have developed a multilayered approach which emphasizes responsible stewardship of the environment, efficient use of ecological resources, best practice health and safety standards and sustainable community infrastructural development.",
+    ],
   },
   {
     id: "communities",
     title: "Communities & Sustainable Development",
-    body:
-      "This section should describe how GPDC invests in local relationships, livelihoods, and development initiatives around its operating footprint, supported by project imagery and specific examples once approved.",
+    body: [
+      "Proactive engagement is pivotal to the success of all our operations. At GPDC, we understand that our operations do not happen in a vacuum and that it is our responsibility to ensure peaceful co-existence with all our communities and an enabling environment for our activities.",
+      "We see our communities as partners, and work closely with local, state and federal government agencies NGOs and development institutions in the areas of infrastructure development, skills acquisition, economic empowerment and capacity building",
+    ],
   },
   {
     id: "health-safety",
-    title: "Health & Safety",
-    body:
-      "Health and safety content should outline GPDC's commitment to workforce wellbeing, operating discipline, and any applicable systems, standards, or certifications confirmed for public release.",
+    title: "Health, Safety & Security",
+    body: [
+      "Ensuring the health, safety and security of all our employees and the public is of paramount concern to GPDC. Our CASHES- Community Affairs, Safety, Health, Environment and Security policy, aligns itself with international best practice and provides performance standards for measurement which are monitored and reported on annually.",
+      "Components of our Health, Safety and Security management system include the following;",
+    ],
+    items: [
+      "Robust wellbeing programme for all staff.",
+      "Periodic Risk assessment mapping for all planned operations and implementation of control measures.",
+      "Revolving process of internal auditing and self assessment.",
+      "Health and Safety awareness and competency training.",
+      "Incident reporting and investigation procedures.",
+    ],
   },
   {
-    id: "security",
-    title: "Security",
-    body:
-      "Security messaging should balance operational protection with community sensitivity, emphasizing responsible, compliant, and risk-aware practices.",
-  },
-  {
-    id: "environment",
-    title: "Environmental Management",
-    body:
-      "Environmental Management should address stewardship, mitigation, compliance, and monitoring, supported by a more modern visual language than the current site offers.",
-  },
-  {
-    id: "climate",
-    title: "Climate Change",
-    body:
-      "The climate pillar is the clearest opportunity to frame GPDC's gas portfolio as part of a lower-emissions transition pathway, while avoiding overclaiming until language is reviewed by the GEC team.",
+    id: "environment-climate",
+    title: "Environmental Management & Climate Change",
+    body: [
+      "GPDC is committed to minimising any detrimental environmental impacts arising from its operations. As part of our strategy to contribute to Nigeria's growing energy needs we take a proactive stance in the management of our natural resources.",
+      "To achieve this, we ensure complete compliance with all international and national environmental regulatory requirements across all our operations and those of our partners. We also ensure our activities reflect best practice standards and infuse energy efficient technologies which ultimately reduce our environmental footprint.",
+      "International and local legislative frameworks support the reduction of CO2 emissions as a mitigative measure for combating climate change. GPDC is doing its part to ensure that Nigeria's energy future is sustainable without compromising on the needs of future generations. We work closely with Government to structure climate change policy which reflects these requirements and promote less energy intensive energy solutions in our operation",
+    ],
   },
 ]
 
