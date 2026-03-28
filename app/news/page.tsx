@@ -31,9 +31,9 @@ export default function NewsPage() {
           {newsItems.map((item) => (
             <article
               key={item.title}
-              className="rounded-sm border border-slate-200 bg-white/92 p-6 shadow-[0_24px_70px_rgba(37,62,92,0.08)]"
+              className="rounded-sm border border-slate-200 bg-[#EDE9D0]/80 p-6 shadow-[0_24px_70px_rgba(58,0,30,0.08)]"
             >
-              <div className="aspect-[16/10] rounded-[24px] border border-slate-200 bg-[linear-gradient(135deg,#0f172a,#0ea5e9)]" />
+              <div className="aspect-[16/10] rounded-[24px] border border-slate-200 bg-[linear-gradient(135deg,#3A001E,#7a1040)]" />
               <div className="mt-6 flex items-center justify-between gap-3 text-xs uppercase tracking-[0.18em] text-slate-500">
                 <span>{item.category}</span>
                 <span>{item.date}</span>
@@ -44,7 +44,7 @@ export default function NewsPage() {
               <p className="mt-4 text-base leading-7 text-slate-600">{item.excerpt}</p>
               <Link
                 href={item.href}
-                className="mt-6 inline-flex text-sm font-semibold uppercase tracking-[0.16em] text-sky-700 transition hover:text-slate-900"
+                className="mt-6 inline-flex text-sm font-semibold uppercase tracking-[0.16em] text-[#D8271B] transition hover:text-[#3A001E]"
               >
                 Read More
               </Link>

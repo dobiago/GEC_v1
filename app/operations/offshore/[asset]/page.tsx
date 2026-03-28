@@ -19,5 +19,12 @@ export default async function OffshoreAssetPage({
     notFound()
   }
 
-  return <OperationAssetDetail title={entry.title} paragraphs={entry.paragraphs} imageSrc={entry.imageSrc} />
+  return (
+    <OperationAssetDetail
+      title={entry.title}
+      detailParagraphs={entry.detailParagraphs}
+      detailMediaSlots={entry.detailMediaSlots}
+      imageSrc={entry.imageSrc}
+    />
+  )
 }

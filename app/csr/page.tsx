@@ -27,7 +27,7 @@ export default function CSRPage() {
           <section
             key={section.id}
             id={section.id}
-            className="grid scroll-mt-32 gap-8 rounded-sm border border-slate-200 p-8 shadow-[0_30px_90px_rgba(37,62,92,0.08)] lg:grid-cols-[0.34fr_0.66fr]"
+            className="grid scroll-mt-32 gap-8 rounded-sm border border-slate-200 p-8 shadow-[0_30px_90px_rgba(58,0,30,0.08)] lg:grid-cols-[0.34fr_0.66fr]"
             style={{
               background:
                 index % 2 === 0
@@ -36,7 +36,7 @@ export default function CSRPage() {
             }}
           >
             <div className="space-y-3">
-              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-sky-700">CSR Pillar</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#D8271B]">CSR Pillar</p>
               <h2 className="text-3xl font-semibold tracking-[-0.05em] text-slate-950 sm:text-4xl">
                 {section.title}
               </h2>

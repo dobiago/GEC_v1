@@ -17,7 +17,7 @@ export default function ServicesPage() {
           {services.map((service) => (
             <div
               key={service.title}
-              className="rounded-sm border border-slate-200 bg-white/90 p-7 shadow-[0_24px_70px_rgba(37,62,92,0.08)]"
+              className="rounded-sm border border-slate-200 bg-[#EDE9D0]/80 p-7 shadow-[0_24px_70px_rgba(58,0,30,0.08)]"
             >
               <p className="text-xs uppercase tracking-[0.28em] text-slate-500">{service.title}</p>
               <p className="mt-5 text-lg leading-8 text-slate-700">{service.description}</p>

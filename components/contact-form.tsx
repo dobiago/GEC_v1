@@ -43,7 +43,7 @@ export function ContactForm() {
 
   return (
     <form
-      className="space-y-5 rounded-sm border border-slate-200 bg-white/90 p-6 shadow-[0_30px_80px_rgba(37,62,92,0.08)] sm:p-8"
+      className="space-y-5 rounded-sm border border-slate-200 bg-[#EDE9D0]/80 p-6 shadow-[0_30px_80px_rgba(58,0,30,0.08)] sm:p-8"
       onSubmit={handleSubmit}
     >
       <div className="grid gap-5 sm:grid-cols-2">
@@ -52,7 +52,7 @@ export function ContactForm() {
           <input
             required
             name="name"
-            className="h-12 w-full rounded-sm border border-slate-200 bg-slate-50 px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-sky-400"
+            className="h-12 w-full rounded-sm border border-slate-200 bg-[#EDE9D0]/80 px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#D8271B]"
             placeholder="Your name"
           />
         </label>
@@ -62,7 +62,7 @@ export function ContactForm() {
             required
             type="email"
             name="email"
-            className="h-12 w-full rounded-sm border border-slate-200 bg-slate-50 px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-sky-400"
+            className="h-12 w-full rounded-sm border border-slate-200 bg-[#EDE9D0]/80 px-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#D8271B]"
             placeholder="name@company.com"
           />
         </label>
@@ -74,7 +74,7 @@ export function ContactForm() {
           required
           name="message"
           rows={6}
-          className="w-full rounded-sm border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-sky-400"
+          className="w-full rounded-sm border border-slate-200 bg-[#EDE9D0]/80 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#D8271B]"
           placeholder="Outline your project, basin, or operating requirement."
         />
       </label>
@@ -83,7 +83,7 @@ export function ContactForm() {
         <Button
           type="submit"
           size="lg"
-          className="h-12 rounded-sm bg-slate-900 px-6 text-sm tracking-[0.08em] text-white hover:bg-slate-800"
+          className="h-12 rounded-sm bg-[#D8271B] px-6 text-sm tracking-[0.08em] text-white hover:bg-[#3A001E]"
           disabled={status === "sending"}
         >
           {status === "sending" ? "Sending" : "Send enquiry"}

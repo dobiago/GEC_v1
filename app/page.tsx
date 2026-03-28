@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <main className="overflow-hidden pt-[76px] text-slate-900">
       <section className="relative isolate min-h-[90vh] px-6 pb-18 pt-16 md:px-12 md:pb-24 md:pt-24">
-        <div className="absolute inset-x-0 top-0 h-[520px] bg-[radial-gradient(circle_at_15%_20%,rgba(14,116,144,0.18),transparent_28%),radial-gradient(circle_at_80%_0%,rgba(245,158,11,0.18),transparent_25%),linear-gradient(180deg,rgba(255,255,255,0.65),rgba(255,255,255,0))]" />
+        <div className="absolute inset-x-0 top-0 h-[520px] bg-[radial-gradient(circle_at_15%_20%,rgba(216,39,27,0.12),transparent_28%),radial-gradient(circle_at_80%_0%,rgba(223,154,139,0.15),transparent_25%),linear-gradient(180deg,rgba(237,233,208,0.65),rgba(237,233,208,0))]" />
         <WaveHalftone
           className="absolute inset-0 z-0"
           dotColor="rgba(180,180,180,0.35)"
@@ -18,7 +18,7 @@ export default function Home() {
         />
         <div className="relative z-10 flex h-full min-h-[90vh] items-center">
           <div className="max-w-2xl space-y-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.32em] text-sky-700">
+            <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[#D8271B]">
               {homeSections.hero.eyebrow}
             </p>
             <div className="space-y-5">
@@ -35,7 +35,7 @@ export default function Home() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/about"
-                className="rounded-sm bg-slate-950 px-6 py-3 text-sm font-semibold tracking-[0.08em] text-white transition hover:bg-slate-800"
+                className="rounded-sm bg-[#D8271B] px-6 py-3 text-sm font-semibold tracking-[0.08em] text-white transition hover:bg-[#3A001E]"
               >
                 Explore About GPDC
               </Link>
@@ -74,7 +74,7 @@ export default function Home() {
           />
           <Link
             href="/news"
-            className="text-sm font-semibold uppercase tracking-[0.16em] text-sky-700 transition hover:text-slate-900"
+            className="text-sm font-semibold uppercase tracking-[0.16em] text-[#D8271B] transition hover:text-[#3A001E]"
           >
             View all news
           </Link>
@@ -84,7 +84,7 @@ export default function Home() {
           {newsItems.map((item) => (
             <article
               key={item.title}
-              className="rounded-sm border border-slate-200 bg-white/92 p-6 shadow-[0_24px_70px_rgba(37,62,92,0.08)]"
+              className="rounded-sm border border-slate-200 bg-[#EDE9D0]/80 p-6 shadow-[0_24px_70px_rgba(58,0,30,0.08)]"
             >
               <div className="flex items-center justify-between gap-3 text-xs uppercase tracking-[0.18em] text-slate-500">
                 <span>{item.category}</span>
@@ -96,7 +96,7 @@ export default function Home() {
               <p className="mt-4 text-base leading-7 text-slate-600">{item.excerpt}</p>
               <Link
                 href={item.href}
-                className="mt-6 inline-flex text-sm font-semibold uppercase tracking-[0.16em] text-sky-700 transition hover:text-slate-900"
+                className="mt-6 inline-flex text-sm font-semibold uppercase tracking-[0.16em] text-[#D8271B] transition hover:text-[#3A001E]"
               >
                 Read more
               </Link>
