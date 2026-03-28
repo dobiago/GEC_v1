@@ -24,9 +24,7 @@ export const aboutNavigationItems: AboutNavItem[] = [
   { id: "strategic-focus", title: "Strategic Focus", href: "#strategic-focus" },
   { id: "our-values", title: "Our Values", href: "#our-values" },
   { id: "our-team", title: "Our Team", href: "#our-team" },
-  { id: "partners", title: "Partners", href: "#partners" },
-  { id: "timeline", title: "Timeline", href: "#timeline" },
-  { id: "governance", title: "Governance", href: "#governance" },
+  { id: "timeline", title: "History", href: "#timeline" },
   { id: "careers", title: "Careers", href: "#careers" },
 ]
 
@@ -77,7 +75,7 @@ export const aboutPartners = {
 }
 
 export const aboutTimelineIntro =
-  "A visual timeline from 1991 to 2026 should anchor the About page, reinforcing continuity, growth, and readiness for the company’s next chapter."
+  "A visual history from 1991 to 2026 should anchor the About page, reinforcing continuity, growth, and readiness for the company’s next chapter."
 
 export const aboutTeamMembers: AboutTeamMember[] = [
   {

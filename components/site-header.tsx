@@ -36,7 +36,7 @@ export function SiteHeader() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled
-          ? "border-b border-slate-200/70 bg-white/88 shadow-[0_20px_60px_rgba(39,66,94,0.08)] backdrop-blur-xl"
+          ? "border-b border-slate-200/70 bg-[#EDE9D0]/80 shadow-[0_20px_60px_rgba(58,0,30,0.08)] backdrop-blur-xl"
           : "bg-transparent"
       )}
     >
@@ -64,7 +64,7 @@ export function SiteHeader() {
                   <ChevronDown className="size-3.5 transition group-hover:rotate-180" />
                 </Link>
                 <div className="pointer-events-none absolute left-0 top-full pt-4 opacity-0 transition duration-200 group-hover:pointer-events-auto group-hover:opacity-100">
-                  <div className="min-w-[260px] rounded-sm border border-slate-200 bg-white/95 p-2 shadow-[0_20px_60px_rgba(39,66,94,0.14)] backdrop-blur-xl">
+                  <div className="min-w-[260px] rounded-sm border border-slate-200 bg-[#EDE9D0]/80 p-2 shadow-[0_20px_60px_rgba(39,66,94,0.14)] backdrop-blur-xl">
                     {item.children.map((child) => (
                       <Link
                         key={child.href}
@@ -100,7 +100,7 @@ export function SiteHeader() {
       </div>
 
       {open ? (
-        <div className="border-t border-slate-200 bg-white/95 px-6 py-4 shadow-[0_12px_40px_rgba(39,66,94,0.08)] md:hidden">
+        <div className="border-t border-slate-200 bg-[#EDE9D0]/80 px-6 py-4 shadow-[0_12px_40px_rgba(58,0,30,0.08)] md:hidden">
           <nav className="flex flex-col gap-4">
             {navigation.map((item) => (
               item.children ? (

@@ -37,9 +37,9 @@ function TeamGrid({
           <Link
             key={member.slug}
             href={`/about/team/${member.slug}`}
-            className="group rounded-sm border border-slate-200 bg-white/92 p-5 shadow-[0_24px_70px_rgba(37,62,92,0.08)] transition hover:-translate-y-1 hover:border-slate-300"
+            className="group rounded-sm border border-slate-200 bg-[#EDE9D0]/80 p-5 shadow-[0_24px_70px_rgba(58,0,30,0.08)] transition hover:-translate-y-1 hover:border-slate-300"
           >
-            <div className="relative aspect-[4/3] overflow-hidden rounded-[24px] border border-slate-200 bg-[radial-gradient(circle_at_top,rgba(14,116,144,0.16),transparent_40%),linear-gradient(135deg,#f8fafc,#dbeafe)]">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-[24px] border border-slate-200 bg-[radial-gradient(circle_at_top,rgba(58,0,30,0.10),transparent_40%),linear-gradient(135deg,#EDE9D0,#DF9A8B30)]">
               {member.imageSrc ? (
                 <Image
                   src={member.imageSrc}
@@ -67,7 +67,7 @@ export default function AboutPage() {
     <main className="pt-[76px] text-slate-900">
       <section className="px-6 pb-12 pt-16 md:px-12 md:pb-16 md:pt-20">
         <div className="w-full space-y-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-sky-700">About Us</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#D8271B]">About Us</p>
           <h1 className="text-4xl font-semibold tracking-[-0.05em] text-slate-950 sm:text-5xl">
             Who are we
           </h1>
@@ -91,7 +91,7 @@ export default function AboutPage() {
           </p>
           <button
             type="button"
-            className="text-xs font-semibold uppercase tracking-[0.28em] text-sky-700 lg:hidden"
+            className="text-xs font-semibold uppercase tracking-[0.28em] text-[#D8271B] lg:hidden"
             onClick={() => setIsIntroExpanded((value) => !value)}
             aria-expanded={isIntroExpanded}
           >
@@ -105,9 +105,11 @@ export default function AboutPage() {
       />
 
       <div className="space-y-8 px-6 py-10 md:px-12 md:py-14">
+        <ValuesSection />
+
         <section
           id={strategicFocusSection.id}
-          className="scroll-mt-32 rounded-sm border border-slate-200 bg-white/90 p-8 shadow-[0_24px_70px_rgba(37,62,92,0.08)]"
+          className="scroll-mt-32 rounded-sm border border-slate-200 bg-[#EDE9D0]/80 p-8 shadow-[0_24px_70px_rgba(58,0,30,0.08)]"
         >
           <div className="w-full space-y-6">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-amber-600">
@@ -126,7 +128,7 @@ export default function AboutPage() {
             </div>
             <button
               type="button"
-              className="text-xs font-semibold uppercase tracking-[0.28em] text-sky-700 lg:hidden"
+              className="text-xs font-semibold uppercase tracking-[0.28em] text-[#D8271B] lg:hidden"
               onClick={() => setIsStrategicFocusExpanded((value) => !value)}
               aria-expanded={isStrategicFocusExpanded}
             >
@@ -135,14 +137,12 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <ValuesSection />
-
         <section
           id="our-team"
-          className="scroll-mt-32 rounded-sm border border-slate-200 bg-white/90 p-8 shadow-[0_30px_90px_rgba(37,62,92,0.08)]"
+          className="scroll-mt-32 rounded-sm border border-slate-200 bg-[#EDE9D0]/80 p-8 shadow-[0_30px_90px_rgba(58,0,30,0.08)]"
         >
           <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-sky-700">Leadership</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#D8271B]">Leadership</p>
             <h2 className="mt-3 text-3xl font-semibold tracking-[-0.05em] text-slate-950 sm:text-4xl">
               Our Team
             </h2>
@@ -160,10 +160,11 @@ export default function AboutPage() {
 
         <section
           id="partners"
-          className="scroll-mt-32 grid gap-8 rounded-sm border border-slate-200 bg-white/90 p-8 shadow-[0_30px_90px_rgba(37,62,92,0.08)] lg:grid-cols-[0.46fr_0.54fr]"
+          hidden
+          className="scroll-mt-32 grid gap-8 rounded-sm border border-slate-200 bg-[#EDE9D0]/80 p-8 shadow-[0_30px_90px_rgba(58,0,30,0.08)] lg:grid-cols-[0.46fr_0.54fr]"
         >
           <div className="space-y-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-sky-700">Partnerships</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#D8271B]">Partnerships</p>
             <h2 className="text-3xl font-semibold tracking-[-0.05em] text-slate-950 sm:text-4xl">
               {aboutPartners.title}
             </h2>
@@ -176,7 +177,7 @@ export default function AboutPage() {
             </div>
             <div className="grid gap-4 md:grid-cols-3">
               {aboutPartners.highlights.map((highlight) => (
-                <article key={highlight} className="rounded-sm border border-slate-200 bg-slate-50 p-5">
+                <article key={highlight} className="rounded-sm border border-slate-200 bg-[#EDE9D0]/80 p-5">
                   <p className="text-sm leading-7 text-slate-700">{highlight}</p>
                 </article>
               ))}
@@ -186,28 +187,78 @@ export default function AboutPage() {
 
         <section
           id="timeline"
-          className="scroll-mt-32 rounded-sm border border-slate-200 bg-white/90 p-8 shadow-[0_30px_90px_rgba(37,62,92,0.08)]"
+          className="scroll-mt-32 rounded-sm border border-slate-200 bg-[#EDE9D0]/80 p-8 shadow-[0_30px_90px_rgba(58,0,30,0.08)]"
         >
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-sky-700">Milestones</p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-[-0.05em] text-slate-950 sm:text-4xl">
-            Company Timeline
-          </h2>
-          <p className="mt-4 max-w-3xl text-base leading-8 text-slate-600">{aboutTimelineIntro}</p>
-          <div className="mt-10 grid gap-5 xl:grid-cols-4">
-            {timelineEntries.map((entry) => (
-              <article
-                key={entry.year}
-                className="rounded-sm border border-slate-200 bg-[linear-gradient(180deg,rgba(255,255,255,0.95),rgba(241,245,249,0.95))] p-6"
-              >
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-amber-700">
-                  {entry.year}
-                </p>
-                <h3 className="mt-4 text-2xl font-semibold tracking-[-0.04em] text-slate-950">
-                  {entry.title}
-                </h3>
-                <p className="mt-4 text-sm leading-7 text-slate-600">{entry.description}</p>
-              </article>
-            ))}
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#D8271B]">History</p>
+          <div className="mt-10 hidden md:block">
+            <div className="relative">
+              <div className="absolute left-0 right-0 top-1/2 h-px -translate-y-1/2 bg-slate-300/80" />
+              <div className="grid grid-cols-4 gap-10">
+                {timelineEntries.map((entry, index) => {
+                  const isTop = index % 2 === 0
+
+                  return (
+                    <article key={entry.year} className="grid min-h-[320px] grid-rows-[1fr_auto_1fr] text-left">
+                      <div className={isTop ? "self-end pb-10" : ""}>
+                        {isTop ? (
+                          <>
+                            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-amber-700">
+                              {entry.year}
+                            </p>
+                            <h3 className="mt-4 text-2xl font-semibold tracking-[-0.04em] text-slate-950">
+                              {entry.title}
+                            </h3>
+                            <p className="mt-4 max-w-xs text-sm leading-7 text-slate-600">
+                              {entry.description}
+                            </p>
+                          </>
+                        ) : null}
+                      </div>
+
+                      <div className="relative flex items-center justify-start">
+                        <span className="relative z-10 h-4 w-4 rounded-full border-4 border-white bg-amber-500" />
+                      </div>
+
+                      <div className={isTop ? "" : "pt-10"}>
+                        {!isTop ? (
+                          <>
+                            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-amber-700">
+                              {entry.year}
+                            </p>
+                            <h3 className="mt-4 text-2xl font-semibold tracking-[-0.04em] text-slate-950">
+                              {entry.title}
+                            </h3>
+                            <p className="mt-4 max-w-xs text-sm leading-7 text-slate-600">
+                              {entry.description}
+                            </p>
+                          </>
+                        ) : null}
+                      </div>
+                    </article>
+                  )
+                })}
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-10 md:hidden">
+            <div className="relative pl-14">
+              <div className="absolute bottom-0 left-4 top-0 w-px bg-slate-300/80" />
+              <div className="space-y-12">
+                {timelineEntries.map((entry) => (
+                  <article key={entry.year} className="relative">
+                    <span className="absolute -left-10 top-2 h-4 w-4 rounded-full border-4 border-white bg-amber-500" />
+                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-amber-700">
+                      {entry.year}
+                    </p>
+                    <h3 className="mt-4 text-2xl font-semibold tracking-[-0.04em] text-slate-950">
+                      {entry.title}
+                    </h3>
+                    <p className="mt-4 text-sm leading-7 text-slate-600">{entry.description}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
@@ -215,10 +266,11 @@ export default function AboutPage() {
           <section
             key={section.id}
             id={section.id}
-            className="grid scroll-mt-32 gap-8 rounded-sm border border-slate-200 bg-white/90 p-8 shadow-[0_30px_90px_rgba(37,62,92,0.08)] lg:grid-cols-[0.38fr_0.62fr]"
+            hidden={section.id === "governance"}
+            className="grid scroll-mt-32 gap-8 rounded-sm border border-slate-200 bg-[#EDE9D0]/80 p-8 shadow-[0_30px_90px_rgba(58,0,30,0.08)] lg:grid-cols-[0.38fr_0.62fr]"
           >
             <div className="space-y-3">
-              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-sky-700">
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#D8271B]">
                 {section.kicker}
               </p>
               <h2 className="text-3xl font-semibold tracking-[-0.05em] text-slate-950 sm:text-4xl">

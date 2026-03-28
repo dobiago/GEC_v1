@@ -21,7 +21,7 @@ export function PlatformTimeline() {
       <div className="relative -mt-[16vh] px-6 pb-20 md:-mt-[24vh] md:px-12 md:pb-28">
         <div className="mx-auto mb-10 max-w-6xl">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-amber-600">
-            Company History
+            History
           </p>
         </div>
 

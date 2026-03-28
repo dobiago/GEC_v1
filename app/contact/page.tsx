@@ -14,7 +14,7 @@ export default function ContactPage() {
               description="The contact page now removes the incorrect physical address from the public-facing experience and routes enquiries through the correct email-based contact paths."
             />
 
-            <div className="rounded-sm border border-slate-200 bg-white/90 p-6 shadow-[0_30px_80px_rgba(37,62,92,0.08)]">
+            <div className="rounded-sm border border-slate-200 bg-[#EDE9D0]/80 p-6 shadow-[0_30px_80px_rgba(58,0,30,0.08)]">
               <div className="space-y-5">
                 {contactHighlights.map((item) => (
                   <div key={item.label}>
@@ -25,7 +25,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="rounded-sm border border-slate-200 bg-[linear-gradient(135deg,rgba(10,37,64,0.96),rgba(14,116,144,0.88))] p-6 text-white shadow-[0_30px_90px_rgba(37,62,92,0.16)]">
+            <div className="rounded-sm border border-slate-200 bg-[linear-gradient(135deg,rgba(58,0,30,0.96),rgba(90,10,50,0.88))] p-6 text-white shadow-[0_30px_90px_rgba(37,62,92,0.16)]">
               <p className="text-xs uppercase tracking-[0.24em] text-amber-200">Corporate identity</p>
               <p className="mt-4 text-2xl font-semibold tracking-[-0.04em]">{company.heroTagline}</p>
               <p className="mt-4 text-base leading-8 text-white/78">{company.overview}</p>
