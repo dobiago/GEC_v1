@@ -38,7 +38,7 @@ export function SectionSubnav({ items, topClassName }: SectionSubnavProps) {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "rounded-full border px-4 py-2 text-sm font-medium transition-colors",
+                  "rounded-sm border px-4 py-2 text-sm font-medium transition-colors",
                   isActive
                     ? "border-slate-900 bg-slate-900 text-white"
                     : "border-slate-200 bg-white/70 text-slate-600 hover:border-slate-300 hover:text-slate-900",

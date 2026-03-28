@@ -17,7 +17,7 @@ function StatStrip() {
       {operationsPortfolioStats.map((stat) => (
         <article
           key={stat.label}
-          className="rounded-[30px] border border-slate-200 bg-white/92 p-6 shadow-[0_24px_70px_rgba(37,62,92,0.08)]"
+          className="rounded-sm border border-slate-200 bg-white/92 p-6 shadow-[0_24px_70px_rgba(37,62,92,0.08)]"
         >
           <p className="text-sm uppercase tracking-[0.18em] text-slate-500">{stat.label}</p>
           <p className="mt-4 text-4xl font-semibold tracking-[-0.05em] text-slate-950">{stat.value}</p>
@@ -39,7 +39,7 @@ function AssetSection({
   return (
     <section
       id={id}
-      className="scroll-mt-32 rounded-[36px] border border-slate-200 bg-white/90 p-8 shadow-[0_30px_90px_rgba(37,62,92,0.08)]"
+      className="scroll-mt-32 rounded-sm border border-slate-200 bg-white/90 p-8 shadow-[0_30px_90px_rgba(37,62,92,0.08)]"
     >
       <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
         <div>
@@ -58,14 +58,14 @@ function AssetSection({
         {assets.map((asset) => (
           <article
             key={asset.slug}
-            className="grid gap-6 rounded-[30px] border border-slate-200 bg-slate-50/80 p-6 lg:grid-cols-[0.34fr_0.66fr]"
+            className="grid gap-6 rounded-sm border border-slate-200 bg-slate-50/80 p-6 lg:grid-cols-[0.34fr_0.66fr]"
           >
             <div className="space-y-4">
               <div
                 className="aspect-[4/3] rounded-[24px] border border-slate-200 bg-slate-100 bg-cover bg-center"
                 style={{ backgroundImage: `url(${asset.imageSrc})` }}
               />
-              <div className="rounded-[24px] border border-slate-200 bg-white p-5">
+              <div className="rounded-sm border border-slate-200 bg-white p-5">
                 <p className="text-xs uppercase tracking-[0.24em] text-slate-500">Map / location</p>
                 <p className="mt-3 text-sm leading-7 text-slate-700">{asset.mapLabel}</p>
               </div>
@@ -80,14 +80,14 @@ function AssetSection({
                 </div>
                 <Link
                   href={asset.href}
-                  className="rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-semibold tracking-[0.08em] text-slate-800 transition hover:border-slate-400"
+                  className="rounded-sm border border-slate-300 bg-white px-5 py-3 text-sm font-semibold tracking-[0.08em] text-slate-800 transition hover:border-slate-400"
                 >
                   Asset detail
                 </Link>
               </div>
               <div className="grid gap-4 md:grid-cols-2">
                 {asset.facts.map((fact) => (
-                  <div key={`${asset.slug}-${fact.label}`} className="rounded-[22px] border border-slate-200 bg-white p-5">
+                  <div key={`${asset.slug}-${fact.label}`} className="rounded-sm border border-slate-200 bg-white p-5">
                     <p className="text-xs uppercase tracking-[0.18em] text-slate-500">{fact.label}</p>
                     <p className="mt-3 text-base font-semibold leading-7 text-slate-900">{fact.value}</p>
                   </div>
@@ -129,7 +129,7 @@ export default function OperationsPage() {
       <div className="space-y-8 px-6 py-10 md:px-12 md:py-14">
         <section
           id="portfolio-summary"
-          className="scroll-mt-32 rounded-[36px] border border-slate-200 bg-[linear-gradient(135deg,rgba(10,37,64,0.96),rgba(14,116,144,0.88))] p-8 text-white shadow-[0_30px_90px_rgba(37,62,92,0.16)]"
+          className="scroll-mt-32 rounded-sm border border-slate-200 bg-[linear-gradient(135deg,rgba(10,37,64,0.96),rgba(14,116,144,0.88))] p-8 text-white shadow-[0_30px_90px_rgba(37,62,92,0.16)]"
         >
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-amber-200">Portfolio Summary</p>
           <h2 className="mt-3 text-3xl font-semibold tracking-[-0.05em] sm:text-4xl">
@@ -149,7 +149,7 @@ export default function OperationsPage() {
 
         <section
           id="gas-strategy"
-          className="scroll-mt-32 rounded-[36px] border border-slate-200 bg-white/90 p-8 shadow-[0_30px_90px_rgba(37,62,92,0.08)]"
+          className="scroll-mt-32 rounded-sm border border-slate-200 bg-white/90 p-8 shadow-[0_30px_90px_rgba(37,62,92,0.08)]"
         >
           <div className="max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-sky-700">Gas Strategy</p>
@@ -165,7 +165,7 @@ export default function OperationsPage() {
             {gasStrategySections.map((section) => (
               <article
                 key={section.title}
-                className="rounded-[30px] border border-slate-200 bg-slate-50/85 p-6"
+                className="rounded-sm border border-slate-200 bg-slate-50/85 p-6"
               >
                 <h3 className="text-2xl font-semibold tracking-[-0.04em] text-slate-950">
                   {section.title}

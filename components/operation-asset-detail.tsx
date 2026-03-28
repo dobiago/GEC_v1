@@ -15,7 +15,7 @@ export function OperationAssetDetail({ title, paragraphs, imageSrc }: OperationA
             <OperationsBreadcrumb />
             <h1 className="text-4xl font-semibold tracking-[-0.05em] text-slate-950 sm:text-5xl">{title}</h1>
           </div>
-          <div className="space-y-5 rounded-[32px] border border-slate-200 bg-white/90 p-8 text-base leading-8 text-slate-600 shadow-[0_30px_80px_rgba(37,62,92,0.08)]">
+          <div className="space-y-5 rounded-sm border border-slate-200 bg-white/90 p-8 text-base leading-8 text-slate-600 shadow-[0_30px_80px_rgba(37,62,92,0.08)]">
             {paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}

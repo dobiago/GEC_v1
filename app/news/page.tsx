@@ -31,7 +31,7 @@ export default function NewsPage() {
           {newsItems.map((item) => (
             <article
               key={item.title}
-              className="rounded-[32px] border border-slate-200 bg-white/92 p-6 shadow-[0_24px_70px_rgba(37,62,92,0.08)]"
+              className="rounded-sm border border-slate-200 bg-white/92 p-6 shadow-[0_24px_70px_rgba(37,62,92,0.08)]"
             >
               <div className="aspect-[16/10] rounded-[24px] border border-slate-200 bg-[linear-gradient(135deg,#0f172a,#0ea5e9)]" />
               <div className="mt-6 flex items-center justify-between gap-3 text-xs uppercase tracking-[0.18em] text-slate-500">

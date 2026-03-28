@@ -34,7 +34,7 @@ function TeamGrid({
           <Link
             key={member.slug}
             href={`/about/team/${member.slug}`}
-            className="group rounded-[30px] border border-slate-200 bg-white/92 p-5 shadow-[0_24px_70px_rgba(37,62,92,0.08)] transition hover:-translate-y-1 hover:border-slate-300"
+            className="group rounded-sm border border-slate-200 bg-white/92 p-5 shadow-[0_24px_70px_rgba(37,62,92,0.08)] transition hover:-translate-y-1 hover:border-slate-300"
           >
             <div className="aspect-[4/3] rounded-[24px] border border-slate-200 bg-[radial-gradient(circle_at_top,rgba(14,116,144,0.16),transparent_40%),linear-gradient(135deg,#f8fafc,#dbeafe)]" />
             <p className="mt-5 text-xl font-semibold tracking-[-0.03em] text-slate-950">{member.name}</p>
@@ -68,7 +68,7 @@ export default function AboutPage() {
           <section
             key={section.id}
             id={section.id}
-            className="grid scroll-mt-32 gap-8 rounded-[36px] border border-slate-200 bg-white/90 p-8 shadow-[0_30px_90px_rgba(37,62,92,0.08)] lg:grid-cols-[0.38fr_0.62fr]"
+            className="grid scroll-mt-32 gap-8 rounded-sm border border-slate-200 bg-white/90 p-8 shadow-[0_30px_90px_rgba(37,62,92,0.08)] lg:grid-cols-[0.38fr_0.62fr]"
           >
             <div className="space-y-3">
               <p className="text-xs font-semibold uppercase tracking-[0.28em] text-sky-700">
@@ -88,7 +88,7 @@ export default function AboutPage() {
 
         <section
           id="mission-vision-values"
-          className="scroll-mt-32 rounded-[36px] border border-slate-200 bg-[linear-gradient(135deg,rgba(10,37,64,0.96),rgba(14,116,144,0.88))] p-8 text-white shadow-[0_30px_90px_rgba(37,62,92,0.16)]"
+          className="scroll-mt-32 rounded-sm border border-slate-200 bg-[linear-gradient(135deg,rgba(10,37,64,0.96),rgba(14,116,144,0.88))] p-8 text-white shadow-[0_30px_90px_rgba(37,62,92,0.16)]"
         >
           <div className="grid gap-8 lg:grid-cols-[0.52fr_0.48fr]">
             <div className="space-y-6">
@@ -107,7 +107,7 @@ export default function AboutPage() {
             </div>
             <div className="grid gap-4 md:grid-cols-2">
               {aboutValues.map((value) => (
-                <article key={value.title} className="rounded-[26px] border border-white/14 bg-white/8 p-5">
+                <article key={value.title} className="rounded-sm border border-white/14 bg-white/8 p-5">
                   <h3 className="text-xl font-semibold">{value.title}</h3>
                   <p className="mt-3 text-sm leading-7 text-white/75">{value.description}</p>
                 </article>
@@ -118,7 +118,7 @@ export default function AboutPage() {
 
         <section
           id="our-team"
-          className="scroll-mt-32 rounded-[36px] border border-slate-200 bg-white/90 p-8 shadow-[0_30px_90px_rgba(37,62,92,0.08)]"
+          className="scroll-mt-32 rounded-sm border border-slate-200 bg-white/90 p-8 shadow-[0_30px_90px_rgba(37,62,92,0.08)]"
         >
           <div className="max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-sky-700">Leadership</p>
@@ -139,7 +139,7 @@ export default function AboutPage() {
 
         <section
           id="partners"
-          className="scroll-mt-32 grid gap-8 rounded-[36px] border border-slate-200 bg-white/90 p-8 shadow-[0_30px_90px_rgba(37,62,92,0.08)] lg:grid-cols-[0.46fr_0.54fr]"
+          className="scroll-mt-32 grid gap-8 rounded-sm border border-slate-200 bg-white/90 p-8 shadow-[0_30px_90px_rgba(37,62,92,0.08)] lg:grid-cols-[0.46fr_0.54fr]"
         >
           <div className="space-y-4">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-sky-700">Partnerships</p>
@@ -155,7 +155,7 @@ export default function AboutPage() {
             </div>
             <div className="grid gap-4 md:grid-cols-3">
               {aboutPartners.highlights.map((highlight) => (
-                <article key={highlight} className="rounded-[24px] border border-slate-200 bg-slate-50 p-5">
+                <article key={highlight} className="rounded-sm border border-slate-200 bg-slate-50 p-5">
                   <p className="text-sm leading-7 text-slate-700">{highlight}</p>
                 </article>
               ))}
@@ -165,7 +165,7 @@ export default function AboutPage() {
 
         <section
           id="timeline"
-          className="scroll-mt-32 rounded-[36px] border border-slate-200 bg-white/90 p-8 shadow-[0_30px_90px_rgba(37,62,92,0.08)]"
+          className="scroll-mt-32 rounded-sm border border-slate-200 bg-white/90 p-8 shadow-[0_30px_90px_rgba(37,62,92,0.08)]"
         >
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-sky-700">Milestones</p>
           <h2 className="mt-3 text-3xl font-semibold tracking-[-0.05em] text-slate-950 sm:text-4xl">
@@ -176,7 +176,7 @@ export default function AboutPage() {
             {timelineEntries.map((entry) => (
               <article
                 key={entry.year}
-                className="rounded-[28px] border border-slate-200 bg-[linear-gradient(180deg,rgba(255,255,255,0.95),rgba(241,245,249,0.95))] p-6"
+                className="rounded-sm border border-slate-200 bg-[linear-gradient(180deg,rgba(255,255,255,0.95),rgba(241,245,249,0.95))] p-6"
               >
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-amber-700">
                   {entry.year}
@@ -194,7 +194,7 @@ export default function AboutPage() {
           <section
             key={section.id}
             id={section.id}
-            className="grid scroll-mt-32 gap-8 rounded-[36px] border border-slate-200 bg-white/90 p-8 shadow-[0_30px_90px_rgba(37,62,92,0.08)] lg:grid-cols-[0.38fr_0.62fr]"
+            className="grid scroll-mt-32 gap-8 rounded-sm border border-slate-200 bg-white/90 p-8 shadow-[0_30px_90px_rgba(37,62,92,0.08)] lg:grid-cols-[0.38fr_0.62fr]"
           >
             <div className="space-y-3">
               <p className="text-xs font-semibold uppercase tracking-[0.28em] text-sky-700">

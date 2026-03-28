@@ -27,7 +27,7 @@ export default function CSRPage() {
           <section
             key={section.id}
             id={section.id}
-            className="grid scroll-mt-32 gap-8 rounded-[36px] border border-slate-200 p-8 shadow-[0_30px_90px_rgba(37,62,92,0.08)] lg:grid-cols-[0.34fr_0.66fr]"
+            className="grid scroll-mt-32 gap-8 rounded-sm border border-slate-200 p-8 shadow-[0_30px_90px_rgba(37,62,92,0.08)] lg:grid-cols-[0.34fr_0.66fr]"
             style={{
               background:
                 index % 2 === 0
@@ -43,7 +43,7 @@ export default function CSRPage() {
             </div>
             <div className="space-y-5">
               <p className="text-base leading-8 text-slate-600">{section.body}</p>
-              <div className="rounded-[26px] border border-slate-200 bg-white/80 p-5">
+              <div className="rounded-sm border border-slate-200 bg-white/80 p-5">
                 <p className="text-xs uppercase tracking-[0.22em] text-slate-500">Implementation note</p>
                 <p className="mt-3 text-sm leading-7 text-slate-700">
                   This layout is ready to receive approved project photography, icons, and final
