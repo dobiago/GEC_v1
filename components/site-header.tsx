@@ -64,12 +64,12 @@ export function SiteHeader() {
                   <ChevronDown className="size-3.5 transition group-hover:rotate-180" />
                 </Link>
                 <div className="pointer-events-none absolute left-0 top-full pt-4 opacity-0 transition duration-200 group-hover:pointer-events-auto group-hover:opacity-100">
-                  <div className="min-w-[260px] rounded-3xl border border-slate-200 bg-white/95 p-2 shadow-[0_20px_60px_rgba(39,66,94,0.14)] backdrop-blur-xl">
+                  <div className="min-w-[260px] rounded-sm border border-slate-200 bg-white/95 p-2 shadow-[0_20px_60px_rgba(39,66,94,0.14)] backdrop-blur-xl">
                     {item.children.map((child) => (
                       <Link
                         key={child.href}
                         href={child.href}
-                        className="block rounded-2xl px-4 py-3 text-sm tracking-[0.03em] text-slate-600 transition hover:bg-slate-100 hover:text-slate-950"
+                        className="block rounded-sm px-4 py-3 text-sm tracking-[0.03em] text-slate-600 transition hover:bg-slate-100 hover:text-slate-950"
                       >
                         {child.label}
                       </Link>
@@ -92,7 +92,7 @@ export function SiteHeader() {
         <button
           type="button"
           aria-label="Toggle navigation"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 bg-white/80 text-slate-700 transition hover:border-slate-400 hover:text-slate-950 md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-sm border border-slate-300 bg-white/80 text-slate-700 transition hover:border-slate-400 hover:text-slate-950 md:hidden"
           onClick={() => setOpen((value) => !value)}
         >
           {open ? <X className="size-4" /> : <Menu className="size-4" />}
@@ -116,7 +116,7 @@ export function SiteHeader() {
                     <button
                       type="button"
                       aria-label={`Toggle ${item.label} menu`}
-                      className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-slate-300 text-slate-600"
+                      className="inline-flex h-8 w-8 items-center justify-center rounded-sm border border-slate-300 text-slate-600"
                       onClick={() =>
                         setMobileDropdownOpen((value) => (value === item.href ? null : item.href))
                       }

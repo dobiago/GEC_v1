@@ -10,7 +10,7 @@ export function OperationCategoryCard({ href, title, imageSrc }: OperationCatego
   return (
     <Link
       href={href}
-      className="group relative flex h-full min-h-[170px] items-end overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.03] p-6 transition duration-300 hover:scale-[1.02] hover:border-white/20 hover:bg-white/[0.05] sm:min-h-[190px] lg:min-h-0 lg:p-8"
+      className="group relative flex h-full min-h-[170px] items-end overflow-hidden rounded-sm border border-white/10 bg-white/[0.03] p-6 transition duration-300 hover:scale-[1.02] hover:border-white/20 hover:bg-white/[0.05] sm:min-h-[190px] lg:min-h-0 lg:p-8"
     >
       <div
         className="absolute inset-0 bg-zinc-900 bg-cover bg-center transition-opacity duration-300 group-hover:opacity-90"
