@@ -19,5 +19,12 @@ export default async function TeamMemberPage({
     notFound()
   }
 
-  return <AboutTeamDetail name={member.name} title={member.title} bio={member.bio} />
+  return (
+    <AboutTeamDetail
+      name={member.name}
+      title={member.title}
+      bio={member.bio}
+      imageSrc={member.imageSrc}
+    />
+  )
 }

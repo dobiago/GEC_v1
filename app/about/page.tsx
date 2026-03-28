@@ -1,20 +1,23 @@
+"use client"
+
+import Image from "next/image"
 import Link from "next/link"
+import { useState } from "react"
 
 import {
-  aboutMissionVision,
   aboutNavigationItems,
   aboutPartners,
   aboutSections,
   aboutTeamMembers,
   aboutTimelineIntro,
-  aboutValues,
 } from "@/lib/about-data"
 import { timelineEntries } from "@/lib/site-data"
 import { SectionSubnav } from "@/components/section-subnav"
-import { SectionHeading } from "@/components/section-heading"
+import { ValuesSection } from "@/components/ui/values-section"
 
 const executiveDirectors = aboutTeamMembers.filter((member) => member.category === "executive")
 const nonExecutiveDirectors = aboutTeamMembers.filter((member) => member.category === "non-executive")
+const [strategicFocusSection, ...remainingAboutSections] = aboutSections
 
 function TeamGrid({
   title,
@@ -36,7 +39,17 @@ function TeamGrid({
             href={`/about/team/${member.slug}`}
             className="group rounded-sm border border-slate-200 bg-white/92 p-5 shadow-[0_24px_70px_rgba(37,62,92,0.08)] transition hover:-translate-y-1 hover:border-slate-300"
           >
-            <div className="aspect-[4/3] rounded-[24px] border border-slate-200 bg-[radial-gradient(circle_at_top,rgba(14,116,144,0.16),transparent_40%),linear-gradient(135deg,#f8fafc,#dbeafe)]" />
+            <div className="relative aspect-[4/3] overflow-hidden rounded-[24px] border border-slate-200 bg-[radial-gradient(circle_at_top,rgba(14,116,144,0.16),transparent_40%),linear-gradient(135deg,#f8fafc,#dbeafe)]">
+              {member.imageSrc ? (
+                <Image
+                  src={member.imageSrc}
+                  alt={member.name}
+                  fill
+                  className="object-cover object-top"
+                  sizes="(min-width: 1280px) 20vw, (min-width: 768px) 40vw, 100vw"
+                />
+              ) : null}
+            </div>
             <p className="mt-5 text-xl font-semibold tracking-[-0.03em] text-slate-950">{member.name}</p>
             <p className="mt-2 text-sm uppercase tracking-[0.16em] text-slate-500">{member.title}</p>
           </Link>
@@ -47,15 +60,43 @@ function TeamGrid({
 }
 
 export default function AboutPage() {
+  const [isIntroExpanded, setIsIntroExpanded] = useState(false)
+  const [isStrategicFocusExpanded, setIsStrategicFocusExpanded] = useState(false)
+
   return (
     <main className="pt-[76px] text-slate-900">
       <section className="px-6 pb-12 pt-16 md:px-12 md:pb-16 md:pt-20">
-        <div className="max-w-4xl">
-          <SectionHeading
-            eyebrow="About"
-            title="A single, scrollable company story built for credibility."
-            description="The About experience now consolidates corporate identity, strategy, people, partnerships, governance, and company milestones into one long-form page with faster navigation."
-          />
+        <div className="w-full space-y-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-sky-700">About Us</p>
+          <h1 className="text-4xl font-semibold tracking-[-0.05em] text-slate-950 sm:text-5xl">
+            Who are we
+          </h1>
+          <p
+            className={`text-base leading-7 text-slate-600 sm:text-lg lg:line-clamp-none ${
+              isIntroExpanded ? "block" : "line-clamp-3"
+            }`}
+          >
+            GEC Petroleum Development Company Limited (GPDC) is a Nigerian indigenous Independent
+            actively exploring and developing oil and gas resources in the Niger Delta and Anambra
+            basins. It is the wholly owned E & P subsidiary of Global Energy Company Limited (GEC),
+            an Energy Resources and Infrastructure Group focused on Africa for over 23 years. GPDC
+            holds a prime portfolio of five (5) oil and gas assets with an acreage footprint in
+            excess of 5,200 km2 and an estimated reserves/resources base of + 6.4Tcf gas, and
+            +1.3b barrels of oil and condensates. Our assets comprise of OML 149, OML 151, OPL
+            2010, OPL 907 and OPL 917. GPDC is the Operator of four (4) of these licenses. GPDC's
+            asset portfolio is well diversified, consisting of 3 onshore &amp; 2 offshore blocks.
+            GPDC's successful drilling campaigns have proved up significant reserves and brought two
+            (2) of its assets to development stages. First oil and gas from two (2) fields, (Adofi
+            River and Afiando) is achievable within 18-24 months respectively.
+          </p>
+          <button
+            type="button"
+            className="text-xs font-semibold uppercase tracking-[0.28em] text-sky-700 lg:hidden"
+            onClick={() => setIsIntroExpanded((value) => !value)}
+            aria-expanded={isIntroExpanded}
+          >
+            {isIntroExpanded ? "Show less" : "Read more"}
+          </button>
         </div>
       </section>
 
@@ -64,57 +105,37 @@ export default function AboutPage() {
       />
 
       <div className="space-y-8 px-6 py-10 md:px-12 md:py-14">
-        {aboutSections.slice(0, 3).map((section) => (
-          <section
-            key={section.id}
-            id={section.id}
-            className="grid scroll-mt-32 gap-8 rounded-sm border border-slate-200 bg-white/90 p-8 shadow-[0_30px_90px_rgba(37,62,92,0.08)] lg:grid-cols-[0.38fr_0.62fr]"
-          >
-            <div className="space-y-3">
-              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-sky-700">
-                {section.kicker}
-              </p>
-              <h2 className="text-3xl font-semibold tracking-[-0.05em] text-slate-950 sm:text-4xl">
-                {section.title}
-              </h2>
-            </div>
-            <div className="space-y-5 text-base leading-8 text-slate-600">
-              {section.body.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-            </div>
-          </section>
-        ))}
-
         <section
-          id="mission-vision-values"
-          className="scroll-mt-32 rounded-sm border border-slate-200 bg-[linear-gradient(135deg,rgba(10,37,64,0.96),rgba(14,116,144,0.88))] p-8 text-white shadow-[0_30px_90px_rgba(37,62,92,0.16)]"
+          id={strategicFocusSection.id}
+          className="scroll-mt-32 rounded-sm border border-slate-200 bg-white/90 p-8 shadow-[0_24px_70px_rgba(37,62,92,0.08)]"
         >
-          <div className="grid gap-8 lg:grid-cols-[0.52fr_0.48fr]">
-            <div className="space-y-6">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-amber-200">
-                  Mission & Vision
+          <div className="w-full space-y-6">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-amber-600">
+              {strategicFocusSection.title}
+            </p>
+            <div
+              className={`space-y-4 overflow-hidden lg:max-h-none lg:overflow-visible ${
+                isStrategicFocusExpanded ? "max-h-[999px]" : "max-h-[5.25rem]"
+              }`}
+            >
+              {strategicFocusSection.body.map((paragraph) => (
+                <p key={paragraph} className="pl-4 text-base leading-8 text-slate-600">
+                  {paragraph}
                 </p>
-                <h2 className="mt-3 text-3xl font-semibold tracking-[-0.05em] sm:text-4xl">
-                  Mission, Vision & Values
-                </h2>
-              </div>
-              <div className="space-y-5 text-base leading-8 text-white/78">
-                <p>{aboutMissionVision.mission}</p>
-                <p>{aboutMissionVision.vision}</p>
-              </div>
-            </div>
-            <div className="grid gap-4 md:grid-cols-2">
-              {aboutValues.map((value) => (
-                <article key={value.title} className="rounded-sm border border-white/14 bg-white/8 p-5">
-                  <h3 className="text-xl font-semibold">{value.title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-white/75">{value.description}</p>
-                </article>
               ))}
             </div>
+            <button
+              type="button"
+              className="text-xs font-semibold uppercase tracking-[0.28em] text-sky-700 lg:hidden"
+              onClick={() => setIsStrategicFocusExpanded((value) => !value)}
+              aria-expanded={isStrategicFocusExpanded}
+            >
+              {isStrategicFocusExpanded ? "Show less" : "Read more"}
+            </button>
           </div>
         </section>
+
+        <ValuesSection />
 
         <section
           id="our-team"
@@ -190,7 +211,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {aboutSections.slice(3).map((section) => (
+        {remainingAboutSections.map((section) => (
           <section
             key={section.id}
             id={section.id}

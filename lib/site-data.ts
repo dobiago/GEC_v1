@@ -69,9 +69,8 @@ export const navigation: NavigationItem[] = [
     href: "/about",
     label: "About",
     children: [
-      { href: "/about#who-we-are", label: "Who We Are" },
-      { href: "/about#mission-vision-values", label: "Mission, Vision & Values" },
       { href: "/about#strategic-focus", label: "Strategic Focus" },
+      { href: "/about#our-values", label: "Our Values" },
       { href: "/about#our-team", label: "Our Team" },
       { href: "/about#partners", label: "Partners" },
       { href: "/about#timeline", label: "Timeline" },
