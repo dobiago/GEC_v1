@@ -1,9 +1,8 @@
 import Link from "next/link"
 
-import { SectionHeading } from "@/components/section-heading"
 import { PlatformTimeline } from "@/components/ui/platform-timeline"
 import { WaveHalftone } from "@/components/ui/wave-halftone"
-import { homeSections, homeStats, newsItems } from "@/lib/site-data"
+import { company, homeSections, homeStats, newsItems } from "@/lib/site-data"
 
 export default function Home() {
   return (
@@ -18,15 +17,12 @@ export default function Home() {
         />
         <div className="relative z-10 flex h-full min-h-[90vh] items-center">
           <div className="max-w-2xl space-y-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[#D8271B]">
-              {homeSections.hero.eyebrow}
-            </p>
             <div className="space-y-5">
               <h1 className="max-w-4xl text-5xl font-semibold tracking-[-0.07em] text-slate-950 sm:text-6xl lg:text-7xl">
                 {homeSections.hero.title}
               </h1>
               <p className="text-xl font-medium text-amber-700 sm:text-2xl">
-                Indigenous Energy. Enduring Impact.
+                {company.heroTagline}
               </p>
               <p className="max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
                 {homeSections.hero.body}
@@ -37,7 +33,7 @@ export default function Home() {
                 href="/about"
                 className="rounded-sm bg-[#D8271B] px-6 py-3 text-sm font-semibold tracking-[0.08em] text-white transition hover:bg-[#3A001E]"
               >
-                Explore About GPDC
+                More About GPDC
               </Link>
               <Link
                 href="/operations"
@@ -51,7 +47,7 @@ export default function Home() {
       </section>
 
       <section className="px-6 pb-18 md:px-12 md:pb-24">
-        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
           {homeStats.map((stat) => (
             <article key={stat.label} className="border-l-2 border-amber-500 pl-5">
               <p className="text-sm uppercase tracking-[0.18em] text-slate-500">{stat.label}</p>
@@ -67,11 +63,9 @@ export default function Home() {
 
       <section className="px-6 pb-20 md:px-12 md:pb-28">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-          <SectionHeading
-            eyebrow="GEC In The News"
-            title="A living surface for company progress and industry relevance."
-            description={homeSections.newsTeaser}
-          />
+          <h2 className="text-3xl font-semibold tracking-[-0.05em] text-slate-950 sm:text-4xl">
+            News
+          </h2>
           <Link
             href="/news"
             className="text-sm font-semibold uppercase tracking-[0.16em] text-[#D8271B] transition hover:text-[#3A001E]"
