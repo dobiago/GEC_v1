@@ -130,8 +130,7 @@ export default function OperationsPage() {
         <div className="relative z-10 max-w-4xl">
           <SectionHeading
             eyebrow="Operations"
-            title="A portfolio view built for faster understanding."
-            description="Operations is now a single scrollable overview page with structured fact-sheet content, quick portfolio metrics, and clear paths into individual asset pages."
+            title="How we create value"
           />
         </div>
         <div className="relative z-10 mt-8 max-w-4xl space-y-4 text-base leading-8 text-slate-600">
@@ -149,10 +148,7 @@ export default function OperationsPage() {
           className="scroll-mt-32 rounded-sm border border-slate-200 bg-[linear-gradient(135deg,rgba(58,0,30,0.96),rgba(90,10,50,0.88))] p-8 text-white shadow-[0_30px_90px_rgba(37,62,92,0.16)]"
         >
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-amber-200">Portfolio Summary</p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-[-0.05em] sm:text-4xl">
-            Aggregate scale at a glance
-          </h2>
-          <div className="mt-10">
+          <div className="mt-6">
             <StatStrip />
           </div>
         </section>
