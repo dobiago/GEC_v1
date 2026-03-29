@@ -47,11 +47,11 @@ function getBreadcrumbs(pathname: string): BreadcrumbItem[] {
   }
 
   if (segments[0] === "csr") {
-    return [{ label: "CSR" }]
+    return [{ label: "Corporate Social Responsibility" }]
   }
 
   if (segments[0] === "news") {
-    return [{ label: "GEC in the News" }]
+    return [{ label: "News" }]
   }
 
   if (segments[0] === "contact") {

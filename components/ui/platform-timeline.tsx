@@ -25,10 +25,13 @@ export function PlatformTimeline() {
           </p>
         </div>
 
-        <div className="mx-auto hidden max-w-6xl md:block">
+        <div className="mx-auto hidden max-w-7xl lg:block">
           <div className="relative">
             <div className="absolute left-0 right-0 top-1/2 h-px -translate-y-1/2 bg-slate-300/80" />
-            <div className="grid grid-cols-4 gap-10">
+            <div
+              className="grid gap-8 xl:gap-10"
+              style={{ gridTemplateColumns: `repeat(${timelineEntries.length}, minmax(0, 1fr))` }}
+            >
               {timelineEntries.map((entry, index) => {
                 const isTop = index % 2 === 0
 
@@ -81,7 +84,7 @@ export function PlatformTimeline() {
           </div>
         </div>
 
-        <div className="mx-auto max-w-2xl md:hidden">
+        <div className="mx-auto max-w-2xl lg:hidden">
           <div className="relative pl-14">
             <div className="absolute bottom-0 left-4 top-0 w-px bg-slate-300/80" />
             <div className="space-y-12">

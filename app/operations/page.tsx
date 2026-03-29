@@ -14,11 +14,11 @@ import {
 
 function StatStrip() {
   return (
-    <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-      {operationsPortfolioStats.map((stat, index) => (
+    <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+      {operationsPortfolioStats.map((stat) => (
         <article
           key={stat.label}
-          className={`p-2 xl:px-6 ${index < operationsPortfolioStats.length - 1 ? "xl:border-r xl:border-white/20" : ""}`}
+          className="rounded-sm border border-white/10 bg-white/5 p-5"
         >
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-amber-200">{stat.label}</p>
           <p className="mt-4 text-4xl font-semibold tracking-[-0.05em] text-white">{stat.value}</p>
@@ -57,7 +57,7 @@ function AssetSection({
             key={asset.slug}
             className="grid gap-5 rounded-sm border border-slate-200 bg-[#EDE9D0]/80 p-4 shadow-[0_18px_50px_rgba(58,0,30,0.08)] sm:p-5 lg:gap-6 lg:p-6 lg:shadow-none lg:grid-cols-[0.34fr_0.66fr]"
           >
-            <div className="space-y-4 lg:space-y-4">
+            <div className="space-y-4">
               <div className="w-full">
                 <Link
                   href={asset.href}
@@ -68,10 +68,6 @@ function AssetSection({
                     style={{ backgroundImage: `url(${asset.imageSrc})` }}
                   />
                 </Link>
-              </div>
-              <div className="hidden rounded-sm border border-slate-200 bg-white p-5 lg:block">
-                <p className="text-xs uppercase tracking-[0.24em] text-slate-500">Map / location</p>
-                <p className="mt-3 text-sm leading-7 text-slate-700">{asset.mapLabel}</p>
               </div>
             </div>
             <div className="space-y-4 lg:space-y-5">
@@ -106,12 +102,6 @@ function AssetSection({
                       <p className="mt-3 text-base font-semibold leading-7 text-slate-900">{fact.value}</p>
                     </div>
                   ))}
-                </div>
-              </div>
-              <div className="hidden md:block">
-                <div className="rounded-sm border border-slate-200 bg-white p-5 lg:hidden">
-                  <p className="text-xs uppercase tracking-[0.24em] text-slate-500">Map / location</p>
-                  <p className="mt-3 text-sm leading-7 text-slate-700">{asset.mapLabel}</p>
                 </div>
               </div>
             </div>
@@ -174,7 +164,7 @@ export default function OperationsPage() {
           id="gas-strategy"
           className="scroll-mt-32 rounded-sm border border-slate-200 bg-[#EDE9D0]/80 p-8 shadow-[0_30px_90px_rgba(58,0,30,0.08)]"
         >
-          <div className="max-w-4xl">
+          <div className="w-full max-w-none">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#D8271B]">Gas Strategy</p>
             <h2 className="mt-3 text-3xl font-semibold tracking-[-0.05em] text-slate-950 sm:text-4xl">
               {gasStrategyContent.title}

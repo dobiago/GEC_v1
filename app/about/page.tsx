@@ -190,10 +190,13 @@ export default function AboutPage() {
           className="scroll-mt-32 rounded-sm border border-slate-200 bg-[#EDE9D0]/80 p-8 shadow-[0_30px_90px_rgba(58,0,30,0.08)]"
         >
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#D8271B]">History</p>
-          <div className="mt-10 hidden md:block">
+          <div className="mt-10 hidden lg:block">
             <div className="relative">
               <div className="absolute left-0 right-0 top-1/2 h-px -translate-y-1/2 bg-slate-300/80" />
-              <div className="grid grid-cols-4 gap-10">
+              <div
+                className="grid gap-8 xl:gap-10"
+                style={{ gridTemplateColumns: `repeat(${timelineEntries.length}, minmax(0, 1fr))` }}
+              >
                 {timelineEntries.map((entry, index) => {
                   const isTop = index % 2 === 0
 
@@ -241,7 +244,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="mt-10 md:hidden">
+          <div className="mt-10 lg:hidden">
             <div className="relative pl-14">
               <div className="absolute bottom-0 left-4 top-0 w-px bg-slate-300/80" />
               <div className="space-y-12">

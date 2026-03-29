@@ -57,6 +57,7 @@ export type GasStrategyContent = {
 
 export type CSRSection = {
   body: string[]
+  eyebrow: string
   id: string
   items?: string[]
   title: string
@@ -66,14 +67,14 @@ export const company = {
   founded: "1991",
   name: "GEC Petroleum Development Company",
   legal: "GEC Petroleum Development Company",
-  heroTagline: "Indigenous Energy. Enduring Impact.",
+  heroTagline: "INDIGENOUS ENERGY. ENDURING IMPACT",
   overview:
     "GEC Petroleum Development Company is a Nigerian indigenous energy company developing a focused portfolio of offshore and onshore assets while building long-term value through disciplined operations, partnerships, and gas-led growth.",
   office: {
     email: "info@gecpetroleum.com",
     enquiries: "Commercial, technical, partnership and media enquiries",
   },
-  footerText: "© GEC Petroleum Development Company 1991-2026",
+  footerText: "\u00A9 GEC Petroleum Development Company, 1991\u20132026",
 }
 
 export const navigation: NavigationItem[] = [
@@ -82,12 +83,10 @@ export const navigation: NavigationItem[] = [
     href: "/about",
     label: "About",
     children: [
-      { href: "/about#strategic-focus", label: "Strategic Focus" },
       { href: "/about#our-values", label: "Our Values" },
+      { href: "/about#strategic-focus", label: "Strategic Focus" },
       { href: "/about#our-team", label: "Our Team" },
-      { href: "/about#partners", label: "Partners" },
       { href: "/about#timeline", label: "History" },
-      { href: "/about#governance", label: "Governance" },
       { href: "/about#careers", label: "Careers" },
     ],
   },
@@ -100,23 +99,27 @@ export const navigation: NavigationItem[] = [
       { href: "/operations#gas-strategy", label: "Gas Strategy" },
     ],
   },
-  { href: "/csr", label: "CSR" },
-  { href: "/news", label: "GEC in the News" },
+  { href: "/csr", label: "Corporate Social Responsibility" },
+  { href: "/news", label: "News" },
   { href: "/contact", label: "Contact" },
 ]
 
 export const homeStats: Stat[] = [
-  { label: "Gas reserve base", value: "6.4 Tcf" },
-  { label: "Oil & condensate", value: "1.3B bbl" },
-  { label: "Core assets", value: "5" },
-  { label: "Operated licences", value: "4" },
+  { label: "Founded 1991", value: "35 years" },
+  { label: "3 onshore, 2 offshore", value: "5 blocks" },
+  { label: "Onshore + offshore acreage", value: "7,500 km\u00B2 + 800 km\u00B2" },
+  { label: "Estimated gas resources", value: "6.4 Tcf" },
+  { label: "Oil 2P reserves (net)", value: "70.06 MMboe" },
+  { label: "2C resources (net)", value: "141.8 MMboe" },
 ]
 
 export const operationsPortfolioStats: Stat[] = [
-  { label: "Asset interests", value: "5" },
-  { label: "Shallow offshore blocks", value: "2" },
-  { label: "Land blocks", value: "3" },
-  { label: "Operated licences", value: "4" },
+  { label: "Founded 1991", value: "35 years" },
+  { label: "3 onshore, 2 offshore", value: "5 blocks" },
+  { label: "Onshore + offshore acreage", value: "7,500 km\u00B2 + 800 km\u00B2" },
+  { label: "Estimated gas resources", value: "6.4 Tcf" },
+  { label: "Oil 2P reserves (net)", value: "70.06 MMboe" },
+  { label: "2C resources (net)", value: "141.8 MMboe" },
 ]
 
 export const homeSections = {
@@ -124,7 +127,7 @@ export const homeSections = {
     eyebrow: "Nigerian indigenous energy company",
     title: company.name,
     body:
-      "A refreshed corporate platform for GPDC should communicate operational substance, indigenous leadership, and a clear bridge from legacy oil-and-gas language into a more modern gas-and-growth narrative.",
+      "Founded 35 years ago, GPDC has metamorphosed from a service contractor to major oil and gas companies into an active explorer and developer of oil and gas resources.",
   },
   about:
     "GPDC has evolved from a service-led energy business into an asset-backed operator with a diversified offshore and onshore portfolio. The redesigned site should feel credible in investor, partner, and KYC contexts while remaining clear and accessible to broader audiences.",
@@ -164,26 +167,31 @@ export const newsItems: NewsItem[] = [
 export const timelineEntries: TimelineEntry[] = [
   {
     year: "1991",
-    title: "Company foundation",
-    description: "GEC begins building its presence in Nigeria's energy and infrastructure landscape.",
+    title: "Company Founded",
+    description:
+      "Global Energy Company Limited (GEC) founded as a service contractor to major oil companies in Nigeria.",
   },
   {
     year: "2000s",
-    title: "Asset-led expansion",
+    title: "Asset-led Expansion",
     description:
-      "The business broadens from services into exploration and production opportunities across offshore and onshore basins.",
+      "GEC founded GEC Petroleum Development Company Limited (GDPC), its wholly owned E&P subsidiary, and is awarded five oil blocks: OML 149, OML 151, OPL 2010, OPL 907, and OPL 917.",
   },
   {
     year: "2010s",
-    title: "Portfolio maturation",
+    title: "Portfolio Maturation",
     description:
-      "GPDC advances appraisal, development planning, and operatorship across a focused group of licences.",
+      "Following a $150 million raise in 2008, GPDC advances appraisal, development planning, and operatorship across its portfolio of five assets.",
+  },
+  {
+    year: "2024",
+    title: "Matrix Energy Partnership",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit (review with client)",
   },
   {
     year: "2026",
-    title: "Brand and website repositioning",
-    description:
-      "The company refreshes its public narrative around indigenous leadership, operational discipline, partnerships, and gas-led growth.",
+    title: "35 Years Strong",
+    description: "GPDC celebrates 35 years of energy leadership and stewardship.",
   },
 ]
 
@@ -207,19 +215,24 @@ export const operationsAssets: AssetEntry[] = [
     href: "/operations/onshore/oml-149",
     imageSrc: "/operations/oml_149.jpg",
     intro: "OML 149 (formally OPL 135) is located in the northern onshore flank of the Niger-Delta.",
-    mapLabel: "Northern onshore flank of the Niger Delta",
+    mapLabel: "Delta, Nigeria",
     detailMediaSlots: [
       { alt: "OML 149 document image 1", fileName: "oml-149-01.png", src: "/operations/detail/oml-149-01.png" },
       { alt: "OML 149 document image 2", fileName: "oml-149-02.png", src: "/operations/detail/oml-149-02.png" },
     ],
     facts: [
-      { label: "Location", value: "Northern onshore flank of the Niger Delta" },
-      { label: "P50 in-place volumes", value: "326 Bcf gas and 12.74 MMbbls of condensates" },
-      { label: "2P reserves", value: "188 Bcf gas and 8 MMbbls of condensates" },
-      { label: "Development timing", value: "First hydrocarbon is achievable within 18-24 Months" },
+      { label: "Location", value: "Delta, Nigeria" },
+      {
+        label: "History",
+        value:
+          'Awarded to Global Energy Company (GEC) in the 2005 Bid Rounds by the Nigerian Government under a Production Sharing Contract ("PSC")',
+      },
+      { label: "Acreage", value: "420 sq. km" },
+      { label: "Gross 2P Gas Reserves", value: "188 Bcf" },
+      { label: "Gross 2P Condensate Reserves", value: "6 MMbl" },
     ],
     detailParagraphs: [
-      "OML 149 (formally OPL 135) is located in the northern onshore flank of the Niger-Delta. Its Adofi River structure consists of stacked sand and shale sequences separated by down to the basin growth faults. The block has been well explored and appraised with the current limits established by the Adofi River 3 well. Current discovered volumes comprise P50 in-place-volumes of 326 Bcf gas and 12.74 MMbls of condensates. The 2P reserves comprise 188 Bcf of gas and 8 MMbls of condensates. Part of the development plan on this field aims at exploiting the E1.0, E5.0 and F1.0/F2.0 reservoirs with the Nsukwa1-ST, and the E1.0, E5.0/E6.0 reservoirs with the Adofi River 3 and Adofi River 4 wells.",
+      "OML 149 (formally OPL 135) is located in the northern onshore flank of the Niger-Delta. Its Adofi River structure consists of stacked sand and shale sequences separated by down to the basin growth faults. The block has been well explored and appraised with the current limits established by the Adofi River 3 well. Current discovered volumes comprise P50 in-place-volumes of 326 Bcf gas and 12.74 MMbls of condensates. The 2P reserves comprise 188 Bcf of gas and 6 MMbls of condensates. Part of the development plan on this field aims at exploiting the E1.0, E5.0 and F1.0/F2.0 reservoirs with the Nsukwa1-ST, and the E1.0, E5.0/E6.0 reservoirs with the Adofi River 3 and Adofi River 4 wells.",
       "The produced gas and condensate is expected to be tied back to the Kwale Okpai Gas Production Facility where it would be separated for further use. Further exploration, appraisal and development of the other prospects in OML 149 will be pursued in order to maximize the production from the entire block. In addition to the Adofi River structure, seven other prospects have been identified for exploration and appraisal. The other prospects are expected to contribute over 3 TCF of gas and 120 Mbbls of condensates. These prospective resources evaluated indicate a GPDC net resource volume of over 267 MMBOE.",
       "A Field Development Plan Study has been concluded. GPDC has recently received the approval of the Nigerian National Petroleum Corporation (NNPC) for the conversion of Oil Prospecting License (OPL) 135 into Oil Mining License (OML) 149. First hydrocarbon is achievable within 18-24 Months.",
     ],
@@ -231,13 +244,11 @@ export const operationsAssets: AssetEntry[] = [
     href: "/operations/onshore/opl-917",
     imageSrc: "/operations/opl_917.jpg",
     intro: "OPL 917 spans an area of approximately 1,702 km2 and is located onshore in the Anambra Basin in the southern part of Nigeria.",
-    mapLabel: "Anambra Basin, southern Nigeria",
+    mapLabel: "Anambra, Nigeria",
     detailMediaSlots: [],
     facts: [
-      { label: "Acreage", value: "1,702 km2" },
-      { label: "In-place gas", value: "Up to 300 Bcf" },
-      { label: "Oil in place", value: "Up to 80 MMbbls" },
-      { label: "Working interest", value: "42%" },
+      { label: "Location", value: "Anambra, Nigeria" },
+      { label: "Acreage", value: "1702 sq km" },
     ],
     detailParagraphs: [
       "OPL 917 spans an area of approximately 1,702 km2 and is located onshore in the Anambra Basin in the southern part of Nigeria. Significant gas reserves exist in the Igbariam axis of the OPL 917 where two exploration wells, namely Igbariam-1 and Ajire-1, have been drilled to date.",
@@ -255,13 +266,11 @@ export const operationsAssets: AssetEntry[] = [
     href: "/operations/onshore/opl-907",
     imageSrc: "/operations/opl_907.jpg",
     intro: "OPL 907 is located onshore Nigeria within the highly prospective Anambra Basin.",
-    mapLabel: "Ugwuoba axis, Enugu State",
+    mapLabel: "Anambra, Nigeria",
     detailMediaSlots: [],
     facts: [
-      { label: "Acreage", value: "2,284.50 km2" },
-      { label: "Akukwa gas volume", value: "400 Bcf in place" },
-      { label: "Basin potential", value: "Estimated regional gas potential of 10 Tcf" },
-      { label: "Working interest", value: "41%" },
+      { label: "Location", value: "Anambra, Nigeria" },
+      { label: "Acreage", value: "2,284.5 sq km" },
     ],
     detailParagraphs: [
       "OPL 907 is located onshore Nigeria within the highly prospective Anambra Basin, which holds an estimated gas potential in the region of 10 Tcf. The license covers an area of 2,284.50 km2 and contains the Akukwa gas discovery, which has estimated in-place volumes of 400 Bcf with potential for a significant upside. AGER, an associate company of GEC, operates the asset and controls a 41% working interest.",
@@ -275,20 +284,25 @@ export const operationsAssets: AssetEntry[] = [
     href: "/operations/offshore/oml-151",
     imageSrc: "/operations/opl_2009.png",
     intro: "OML 151 (formerly OPL 2009) is an offshore asset located on the South Eastern flank of the Niger Delta.",
-    mapLabel: "South eastern offshore Niger Delta",
+    mapLabel: "Offshore, Niger Delta",
     detailMediaSlots: [
       { alt: "OML 151 document image 1", fileName: "oml-151-01.png", src: "/operations/detail/oml-151-01.png" },
       { alt: "OML 151 document image 2", fileName: "oml-151-02.png", src: "/operations/detail/oml-151-02.png" },
     ],
     facts: [
-      { label: "Acreage", value: "About 313 sq. km" },
-      { label: "Water depth", value: "30-100 metres" },
-      { label: "GPDC interest", value: "51%" },
-      { label: "2P reserves", value: "47.1 MMbbl oil and 209 Bcf gas" },
+      { label: "Location", value: "Offshore, Niger Delta" },
+      {
+        label: "History",
+        value:
+          'Awarded to GPDC from the 2007 Bid Round under a Production Sharing Contract ("PSC") in December 2008',
+      },
+      { label: "Water Depth", value: "30-100m" },
+      { label: "Gross 2P Oil Reserves", value: "47.1 MMbl" },
+      { label: "Gross 2P Gas Reserves", value: "230 Bcf" },
     ],
     detailParagraphs: [
       "OML 151 (formerly OPL 2009) is an offshore asset located on the South Eastern flank of Niger Delta, with an acreage size of about 313 sq. km. It is located in water depths ranging from 30-100 metres.",
-      "GPDC has 51% working interest, while Eni/Agip has 49% working interest. It consists of one appraised field (Afiando field), with 2P reserves of 47.1 MMbl oil and 209 Bcf gas as well as four identified prospects with P50 resource volumes of 2,792 Mboe.",
+      "GPDC has 51% working interest, while Eni/Agip has 49% working interest. It consists of one appraised field (Afiando field), with 2P reserves of 47.1 MMbl oil and 230 Bcf gas as well as four identified prospects with P50 resource volumes of 2,792 Mboe.",
       "The Afiando field is located on the Northern flank of a collapsed crestal roll over anticlinal structure and has the Okono discovery in OML 119 to its south. Its structure has been compartmentalized into five fault blocks (I, II, III, IV and V). Its blocks II, III and IV have been explored and appraised by the two wells drilled (Afiando 2 and 3 wells) with the hydrocarbons encountered currently planned for development. Current development concept foresees production of 15,500 bopd, 75-100 mmscf/d and 2,500 bcpd from 3 development wells and 2 NAG wells in Reservoirs A1, A3, D2D3 and E.",
       "Compartments II, III and IV will be developed by re-entry and completing the already drilled Afiando 3 well. Production from this well would add to those from the planned Afiando-4 and 5 development wells.",
       "The remaining block potentials comprises the Afiando I and V blocks along with the neighbouring Idak East and Idak West prospects when completed, is expected to add an additional P50 resource volumes of about 2792.5 MMboe",
@@ -302,19 +316,24 @@ export const operationsAssets: AssetEntry[] = [
     href: "/operations/offshore/opl-2010",
     imageSrc: "/operations/opl_2010.png",
     intro: "OPL 2010 is an offshore asset located 55-80 km off the South Eastern Nigerian coast.",
-    mapLabel: "South eastern Nigerian offshore corridor",
+    mapLabel: "Offshore, Eastern Niger Delta",
     detailMediaSlots: [
       { alt: "OPL 2010 document image 1", fileName: "opl-2010-01.png", src: "/operations/detail/opl-2010-01.png" },
       { alt: "OPL 2010 document image 2", fileName: "opl-2010-02.png", src: "/operations/detail/opl-2010-02.png" },
     ],
     facts: [
-      { label: "Acreage", value: "368 km2" },
-      { label: "Water depth", value: "70-160 meters" },
-      { label: "Net 2C resources", value: "136.7 MMboe" },
-      { label: "P50 prospective resources", value: "584.0 MMboe" },
+      { label: "Location", value: "Offshore, Eastern Niger Delta" },
+      {
+        label: "History",
+        value:
+          'Awarded to GPDC in the 2007 Bid Round under a Production Sharing Contract ("PSC") signed in December 2008',
+      },
+      { label: "Water Depth", value: "65 - 170m" },
+      { label: "Gross 2C Oil Resources", value: "74.7 MMbl" },
+      { label: "Gross 2C Gas Resources", value: "371.8 Bcf" },
     ],
     detailParagraphs: [
-      "GPDC was awarded operatorship of this asset after the 2007 bid round. The asset is located 55-80 km off the South Eastern Nigerian coast with an acreage size of 368 km2 and in water depths ranging from 70 to 160 meters. OPL 2010 has four discoveries and over eleven prospects with 136.7 MMboe net 2C resources and 584.0 MMboe P50 prospective resources (Source: CPR by AGR Tracs) estimated. The block is covered by a full 3D seismic and has 5 Wells drilled between 1982 and 1992; 4 of which discovered hydrocarbon.",
+      "GPDC was awarded operatorship of this asset after the 2007 bid round. The asset is located 55-80 km off the South Eastern Nigerian coast with an acreage size of 368 km2 and in water depths ranging from 65 to 170 meters. OPL 2010 has four discoveries and gross 2C oil resources of 74.7 MMbl together with gross 2C gas resources of 371.8 Bcf. The block is covered by a full 3D seismic and has 5 Wells drilled between 1982 and 1992; 4 of which discovered hydrocarbon.",
       "The current technical evaluation effort is based on the 2008 re-processed 3D-Seismic data, which has identified additional prospects and provided further clarity on the already identified prospective resources on the assets. The horizons on this block have been correlated from the D-series which have been found highly prolific in neighbouring assets. The Uwem Cluster Prospect area is first pass for early production mainly because of the near-by Odudu Platform and Production facilities in Total's OML 100. The Uwem appraisal and the Oyong and Oyong North Prospects are structures planned for drilling and hook-up to the Odudu Production facilities. Technically the area has a proven petroleum system from the discoveries and producing reservoirs within the Odudu-Afia-Ime structural axis from the shallow D1 members (D20, D30, D40, D50, D70 reservoirs). GPDC however plans to acquire a new high density 3D seismic data targeting the deeper prospects in the block, as well as obtain an even better understanding of the different other horizons spread over this asset.",
       "As already mentioned, GPDC's notional development plan, aims to achieve first oil through an aggressive EPS strategy that would see it appraise and exploit the already discovered D-series within the Uwem cluster. The second phase of activities would see us achieve Block-wide development through drilling and exploiting the southern Diabolo, Idara and Udeme structures. These reservoirs are characterized by distinct structurally controlled features that have been correlated to the Nkarika field.",
       "In addition to GPDC's oil strategy, the Company is currently developing a cost effective strategy aimed at exploiting the Block's vast gas reserves, located in close proximity with other franchise gas assets operated by major Multinationals. The plan is to jointly proffer ways to economically produce the discovered gas for both local and LNG use.",
@@ -336,14 +355,8 @@ export const offshoreOperations = operationsAssets.filter((asset) => asset.categ
 
 export const csrSections: CSRSection[] = [
   {
-    id: "overview",
-    title: "Overview",
-    body: [
-      "GPDC is a responsible corporate citizen and sustainability is at the heart of all our operations. We have developed a multilayered approach which emphasizes responsible stewardship of the environment, efficient use of ecological resources, best practice health and safety standards and sustainable community infrastructural development.",
-    ],
-  },
-  {
     id: "communities",
+    eyebrow: "Communities & Sustainable Development",
     title: "Communities & Sustainable Development",
     body: [
       "Proactive engagement is pivotal to the success of all our operations. At GPDC, we understand that our operations do not happen in a vacuum and that it is our responsibility to ensure peaceful co-existence with all our communities and an enabling environment for our activities.",
@@ -352,6 +365,7 @@ export const csrSections: CSRSection[] = [
   },
   {
     id: "health-safety",
+    eyebrow: "Health, Safety & Security",
     title: "Health, Safety & Security",
     body: [
       "Ensuring the health, safety and security of all our employees and the public is of paramount concern to GPDC. Our CASHES- Community Affairs, Safety, Health, Environment and Security policy, aligns itself with international best practice and provides performance standards for measurement which are monitored and reported on annually.",
@@ -367,6 +381,7 @@ export const csrSections: CSRSection[] = [
   },
   {
     id: "environment-climate",
+    eyebrow: "Environmental Management & Climate Change",
     title: "Environmental Management & Climate Change",
     body: [
       "GPDC is committed to minimising any detrimental environmental impacts arising from its operations. As part of our strategy to contribute to Nigeria's growing energy needs we take a proactive stance in the management of our natural resources.",

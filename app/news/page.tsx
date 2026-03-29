@@ -11,7 +11,7 @@ export default function NewsPage() {
       <section className="px-6 pb-20 pt-16 md:px-12 md:pb-24 md:pt-20">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading
-            eyebrow="GEC In The News"
+            eyebrow="News"
             title="A new top-level news surface that keeps the site active."
             description="This section is set up for company announcements, partnership stories, awards, and progress milestones, with a layout that can grow into category filtering as volume increases."
           />
