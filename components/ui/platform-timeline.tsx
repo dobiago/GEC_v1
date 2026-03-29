@@ -1,6 +1,7 @@
 import Image from "next/image"
 
 import { timelineEntries } from "@/lib/site-data"
+import { TimelineYear } from "@/components/ui/timeline-year"
 
 export function PlatformTimeline() {
   return (
@@ -46,7 +47,7 @@ export function PlatformTimeline() {
                       {isTop ? (
                         <>
                           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-amber-600">
-                            {entry.year}
+                            <TimelineYear year={entry.year} />
                           </p>
                           <h3 className="mt-4 text-2xl font-semibold tracking-[-0.04em] text-slate-950">
                             {entry.title}
@@ -66,7 +67,7 @@ export function PlatformTimeline() {
                       {!isTop ? (
                         <>
                           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-amber-600">
-                            {entry.year}
+                            <TimelineYear year={entry.year} />
                           </p>
                           <h3 className="mt-4 text-2xl font-semibold tracking-[-0.04em] text-slate-950">
                             {entry.title}
@@ -92,7 +93,7 @@ export function PlatformTimeline() {
                 <article key={entry.year} className="relative">
                   <span className="absolute -left-10 top-2 h-4 w-4 rounded-full border-4 border-white bg-amber-500" />
                   <p className="text-xs font-semibold uppercase tracking-[0.28em] text-amber-600">
-                    {entry.year}
+                    <TimelineYear year={entry.year} />
                   </p>
                   <h3 className="mt-3 text-2xl font-semibold tracking-[-0.04em] text-slate-950">
                     {entry.title}

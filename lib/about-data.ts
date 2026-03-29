@@ -52,11 +52,12 @@ export const aboutSections: AboutSection[] = [
   },
   {
     id: "careers",
-    kicker: "People",
+    kicker: "Careers",
     title: "Careers",
     body: [
-      "Careers should remain concise and credible, showing GPDC as a place for purposeful work and professional growth without overstating current hiring activity.",
-      "The page should route interested candidates to hr@gecpetroleum.com and make it easy to understand what kind of talent the company values.",
+      "GPDC maintains a highly motivated, experienced, and effectively managed workforce. We recognize the importance of quality employee programs for recruiting, development, motivation and retention. We are committed to creating a challenging and rewarding work environment whereby employees are goal-focused and appreciated.",
+      "GPDC offers not only the opportunity for personal and career development, but a chance to make a vital contribution in the Nigerian Energy Sector. A career with us will propel you to your fullest potential. Members of our leadership team are encouraged to act on initiative and to inspire confidence in their human resources. Our policy of staff rotation along with career progression encourages our personnel to work in a way that leaves positive footprints along their career path.",
+      "Please forward your updated CV and documents to Us at hr@gecpetroleum.com.",
     ],
   },
 ]
