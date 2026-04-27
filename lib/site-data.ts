@@ -67,14 +67,14 @@ export const company = {
   founded: "1991",
   name: "GEC Petroleum Development Company",
   legal: "GEC Petroleum Development Company",
-  heroTagline: "INDIGENOUS ENERGY. ENDURING IMPACT",
+  heroTagline: "INDIGENOUS AFRICAN ENERGY. ENDURING GLOBAL IMPACT",
   overview:
     "GEC Petroleum Development Company is a Nigerian indigenous energy company developing a focused portfolio of offshore and onshore assets while building long-term value through disciplined operations, partnerships, and gas-led growth.",
   office: {
     email: "info@gecpetroleum.com",
     enquiries: "Commercial, technical, partnership and media enquiries",
   },
-  footerText: "\u00A9 GEC Petroleum Development Company, 1991\u20132026",
+  footerText: "\u00A9 GEC Petroleum Development Company 2026",
 }
 
 export const navigation: NavigationItem[] = [
@@ -127,7 +127,7 @@ export const homeSections = {
     eyebrow: "Nigerian indigenous energy company",
     title: company.name,
     body:
-      "Founded 35 years ago, GPDC has metamorphosed from a service contractor to major oil and gas companies into an active explorer and developer of oil and gas resources.",
+      "Global Energy Company Limited (GEC), founded 35 years ago, has metamorphosed from an oil service company to major International Oil Companies (IOCs), into an active explorer and developer of oil and gas resources.",
   },
   about:
     "GPDC has evolved from a service-led energy business into an asset-backed operator with a diversified offshore and onshore portfolio. The redesigned site should feel credible in investor, partner, and KYC contexts while remaining clear and accessible to broader audiences.",
@@ -175,18 +175,18 @@ export const timelineEntries: TimelineEntry[] = [
     year: "2000s",
     title: "Asset-led Expansion",
     description:
-      "GEC founded GEC Petroleum Development Company Limited (GDPC), its wholly owned E&P subsidiary, and is awarded five oil blocks: OML 149, OML 151, OPL 2010, OPL 907, and OPL 917.",
+      "GEC founded GEC Petroleum Development Company Limited (GPDC), its wholly owned E&P subsidiary, and is awarded five oil and gaS blocks: OML 149 (formerly OPL 135), OML 151 (formerly OPL 2009), OPL 2010, OPL 907, and OPL 917.",
   },
   {
     year: "2010s",
     title: "Portfolio Maturation",
     description:
-      "Following a $150 million raise in 2008, GPDC advances appraisal, development planning, and operatorship across its portfolio of five assets.",
+      "GPDC, along with its partners, deployes over $250 million across the development of its 5 assets.",
   },
   {
     year: "2024",
     title: "Matrix Energy Partnership",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit (review with client)",
+    description: "Matrix Energy Exploration and Production Company Limited (Matrix) farms-in to OPL 2010 to partner GPDC to bring the block to production.",
   },
   {
     year: "2026",
@@ -196,7 +196,7 @@ export const timelineEntries: TimelineEntry[] = [
 ]
 
 export const operationsOverview = [
-  "GPDC directly and indirectly holds interest in two shallow offshore oil blocks, OPLs 2009 and 2010, and three land oil blocks, OML 149, OPL 907 and OPL 917.",
+  "GPDC directly and indirectly holds interest in two offshore oil blocks, OML 151 (formaly OPL 2009), and OPL 2010. As well as three onshoreoil blocks, OML 149 (formaly, OPL 135), OPL 907, and OPL 917.",
   "GPDC is the operator of four of the licenses on behalf of its JV Partners.",
 ]
 

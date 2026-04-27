@@ -94,7 +94,7 @@ export default function AboutPage() {
             Anambra basins. GPDC is a wholly owned E&amp;P subsidiary of Global Energy Company
             Limited (GEC), an energy resources and infrastructure group with 35 years of operations
             in Africa. GPDC holds a portfolio of five oil and gas assets spanning over 8,300
-            square kilometres of onshore and offshore acreage. Our assets, OML 149, OML 151, OPL
+            square kilometres of onshore and offshore acreages. Our assets, OML 149, OML 151, OPL
             2010, OPL 907, and OPL 917, include three onshore and two offshore blocks. GPDC serves
             as operator on four of the five licences. Successful drilling campaigns have proved up
             significant reserves and advanced two assets to development stage, with the Adofi River
@@ -164,7 +164,7 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="mt-10 space-y-10">
-            <TeamGrid title="Executive Directors" members={executiveDirectors} />
+            <TeamGrid title="Executive Management & Directors" members={executiveDirectors} />
             <TeamGrid title="Non-Executive Directors" members={nonExecutiveDirectors} />
           </div>
         </section>
