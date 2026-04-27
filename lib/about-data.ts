@@ -34,8 +34,8 @@ export const aboutSections: AboutSection[] = [
     kicker: "2026 Direction",
     title: "Strategic Focus",
     body: [
-      "GPDC is currently focused on coming to first oil and is pursuing a two prong strategy of bringing the Adofi River field to first gas and condensate and the Afiando field to first oil. Both have first oil dates of Q2 2017 and Q4 2017 respectively with a target of approximately 100Mscfpd and 17Mbls of liquids both employing an Early Production Scheme (EPS). Full Field Development (FFD) will be pursued on both fields to reach their full field potential of 200Mscf per day/5000 bcpd and 45,000 bopd respectively. sequence, first oil and gas will be pursued in the shallower fields and prospects in OPL 2010 and proving of deep sitting potentials. Given the availability of existing infrastructure both onshore and offshore, all projects are deemed to be of low to medium risk and fairly modest CAPEX to actualize. Over the next five years, GPDC plans to build a minimum of 250mmbl reserves base with a guaranteed production of at least 50,000 barrels per day. Similarly, we plan to build a net gas reserve base of 3tcfÂ and a 250Mscfpd production over the same period. We will achieve this by:",
-      "● Drilling more exploration, appraisal and development wells within our assets and adapting into producers.",
+      "GPDC is currently focused on coming to first oil and is pursuing a two prong strategy of bringing the Adofi River field to first gas and condensate and the Afiando field to first oil. Both have first oil dates of Q2 2027 and Q4 2027 respectively with a target of approximately 100Mscfpd and 17Mbls of liquids both employing an Early Production Scheme (EPS). Full Field Development (FFD) will be pursued on both fields to reach their full field potential of 200Mscf per day/5000 bcpd and 45,000 bopd respectively. First oil and gas will be pursued in the shallower fields and prospects in OPL 2010 followed by proving of deep sitting potentials. Given the availability of existing infrastructure both onshore and offshore, all projects are deemed to be of low to medium risk and fairly modest CAPEX to actualize. Over the next five years, GPDC plans to build a minimum of 250mmbl reserves base with a guaranteed production of at least 50,000 barrels per day. Similarly, we plan to build a net gas reserve base of 3tcf and a 250Mscfpd production over the same period. We will achieve this by:",
+      "● Drilling more exploration, appraisal and development wells within our assets.",
       "● Increasing reserves base through aggressive drilling of the deeper Biafra leads and straddle prospects in OPL 2010.",
       "● Continued participation in planned and on-going acquisition opportunities (IOCs divestments, future licensing rounds, etc). ",
       "In the medium to long term, GPDC will expand its operations into high prospectivity assets in West Africa, whilst pursuing major gas utilization projects in partnership with strategic gas technology companies, focused on LNG, GTL, fertilizers, etc. We also have a strong interest in developing major gas-fired power plants (IPP), utilizing our significant gas resources in the contract areas",
@@ -52,12 +52,12 @@ export const aboutSections: AboutSection[] = [
   },
   {
     id: "careers",
-    kicker: "Careers",
+    kicker: "People",
     title: "Careers",
     body: [
       "GPDC maintains a highly motivated, experienced, and effectively managed workforce. We recognize the importance of quality employee programs for recruiting, development, motivation and retention. We are committed to creating a challenging and rewarding work environment whereby employees are goal-focused and appreciated.",
       "GPDC offers not only the opportunity for personal and career development, but a chance to make a vital contribution in the Nigerian Energy Sector. A career with us will propel you to your fullest potential. Members of our leadership team are encouraged to act on initiative and to inspire confidence in their human resources. Our policy of staff rotation along with career progression encourages our personnel to work in a way that leaves positive footprints along their career path.",
-      "Please forward your updated CV and documents to Us at hr@gecpetroleum.com.",
+      "Please forward your updated CV and documents to us at info@globalenergyco.com.",
     ],
   },
 ]

@@ -6,7 +6,7 @@ import { SiteHeader } from "@/components/site-header"
 
 export const metadata: Metadata = {
   title: "GEC Petroleum Development Company",
-  description: "Indigenous Energy. Enduring Impact.",
+  description: "Indigenous African Energy. Enduring GLobal Impact.",
 }
 
 export default function RootLayout({
