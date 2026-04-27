@@ -8,17 +8,16 @@ import {
   aboutNavigationItems,
   aboutPartners,
   aboutSections,
-  aboutTeamMembers,
-  aboutTimelineIntro,
+  visibleAboutTeamMembers,
 } from "@/lib/about-data"
 import { timelineEntries } from "@/lib/site-data"
 import { SectionSubnav } from "@/components/section-subnav"
 import { TimelineYear } from "@/components/ui/timeline-year"
 import { ValuesSection } from "@/components/ui/values-section"
 
-const executiveDirectors = aboutTeamMembers.filter((member) => member.category === "executive")
-const nonExecutiveDirectors = aboutTeamMembers.filter(
-  (member) => member.category === "non-executive" && member.slug !== "nnamdi-a-obiago",
+const executiveDirectors = visibleAboutTeamMembers.filter((member) => member.category === "executive")
+const nonExecutiveDirectors = visibleAboutTeamMembers.filter(
+  (member) => member.category === "non-executive",
 )
 const [strategicFocusSection, ...remainingAboutSections] = aboutSections
 
@@ -27,7 +26,7 @@ function TeamGrid({
   members,
 }: {
   title: string
-  members: typeof aboutTeamMembers
+  members: typeof visibleAboutTeamMembers
 }) {
   return (
     <div className="space-y-5">
@@ -165,7 +164,9 @@ export default function AboutPage() {
           </div>
           <div className="mt-10 space-y-10">
             <TeamGrid title="Executive Management & Directors" members={executiveDirectors} />
-            <TeamGrid title="Non-Executive Directors" members={nonExecutiveDirectors} />
+            {nonExecutiveDirectors.length > 0 ? (
+              <TeamGrid title="Non-Executive Directors" members={nonExecutiveDirectors} />
+            ) : null}
           </div>
         </section>
 

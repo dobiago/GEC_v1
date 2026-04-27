@@ -149,4 +149,10 @@ export const aboutTeamMembers: AboutTeamMember[] = [
   },
 ]
 
+export const visibleAboutTeamSlugs = ["joe-obiago", "patrick-obot"] as const
+
+export const visibleAboutTeamMembers = aboutTeamMembers.filter((member) =>
+  visibleAboutTeamSlugs.includes(member.slug as (typeof visibleAboutTeamSlugs)[number]),
+)
+
 export const aboutTeamLookup = Object.fromEntries(aboutTeamMembers.map((member) => [member.slug, member]))
