@@ -1,11 +1,16 @@
 import Link from "next/link"
+import { redirect } from "next/navigation"
 
 import { SectionHeading } from "@/components/section-heading"
-import { newsItems } from "@/lib/site-data"
+import { contentVisibility, newsItems } from "@/lib/site-data"
 
 const categories = ["Operations", "Partnerships", "Community", "Awards"]
 
 export default function NewsPage() {
+  if (!contentVisibility.news) {
+    redirect("/")
+  }
+
   return (
     <main className="pt-[76px] text-slate-900">
       <section className="px-6 pb-20 pt-16 md:px-12 md:pb-24 md:pt-20">
