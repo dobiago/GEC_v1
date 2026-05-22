@@ -1,0 +1,18 @@
+{
+  "status": 307,
+  "headers": {
+    "location": "/operations#offshore-assets",
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/operations/layout,_N_T_/operations/offshore/layout,_N_T_/operations/offshore/page,_N_T_/operations/offshore"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/operations/offshore/__PAGE__",
+    "/operations/offshore",
+    "/operations",
+    "/_index",
+    "/_head"
+  ]
+}

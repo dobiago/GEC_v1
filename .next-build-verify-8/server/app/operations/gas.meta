@@ -1,0 +1,18 @@
+{
+  "status": 307,
+  "headers": {
+    "location": "/operations#gas-strategy",
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/operations/layout,_N_T_/operations/gas/layout,_N_T_/operations/gas/page,_N_T_/operations/gas"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/operations/gas/__PAGE__",
+    "/operations/gas",
+    "/operations",
+    "/_index",
+    "/_head"
+  ]
+}

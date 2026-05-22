@@ -1,0 +1,23 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/about/careers/page": "/about/careers",
+  "/about/governance/page": "/about/governance",
+  "/about/page": "/about",
+  "/about/strategic-focus/page": "/about/strategic-focus",
+  "/about/team/[person]/page": "/about/team/[person]",
+  "/about/team/page": "/about/team",
+  "/about/values/page": "/about/values",
+  "/api/contact/route": "/api/contact",
+  "/contact/page": "/contact",
+  "/csr/page": "/csr",
+  "/news/page": "/news",
+  "/operations/gas/page": "/operations/gas",
+  "/operations/offshore/[asset]/page": "/operations/offshore/[asset]",
+  "/operations/offshore/page": "/operations/offshore",
+  "/operations/onshore/[asset]/page": "/operations/onshore/[asset]",
+  "/operations/onshore/page": "/operations/onshore",
+  "/operations/page": "/operations",
+  "/page": "/",
+  "/services/page": "/services"
+}

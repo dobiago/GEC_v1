@@ -1,0 +1,184 @@
+{
+  "version": 3,
+  "pages404": true,
+  "appType": "app",
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "priority": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    },
+    {
+      "source": "/projects",
+      "destination": "/operations",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/projects(?:/)?$"
+    }
+  ],
+  "headers": [],
+  "onMatchHeaders": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [
+    {
+      "page": "/about/team/[person]",
+      "regex": "^/about/team/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPperson": "nxtPperson"
+      },
+      "namedRegex": "^/about/team/(?<nxtPperson>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/operations/offshore/[asset]",
+      "regex": "^/operations/offshore/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPasset": "nxtPasset"
+      },
+      "namedRegex": "^/operations/offshore/(?<nxtPasset>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/operations/onshore/[asset]",
+      "regex": "^/operations/onshore/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPasset": "nxtPasset"
+      },
+      "namedRegex": "^/operations/onshore/(?<nxtPasset>[^/]+?)(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_global-error",
+      "regex": "^/_global\\-error(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_global\\-error(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/about",
+      "regex": "^/about(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/about(?:/)?$"
+    },
+    {
+      "page": "/about/careers",
+      "regex": "^/about/careers(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/about/careers(?:/)?$"
+    },
+    {
+      "page": "/about/governance",
+      "regex": "^/about/governance(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/about/governance(?:/)?$"
+    },
+    {
+      "page": "/about/strategic-focus",
+      "regex": "^/about/strategic\\-focus(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/about/strategic\\-focus(?:/)?$"
+    },
+    {
+      "page": "/about/team",
+      "regex": "^/about/team(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/about/team(?:/)?$"
+    },
+    {
+      "page": "/about/values",
+      "regex": "^/about/values(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/about/values(?:/)?$"
+    },
+    {
+      "page": "/api/contact",
+      "regex": "^/api/contact(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/contact(?:/)?$"
+    },
+    {
+      "page": "/contact",
+      "regex": "^/contact(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/contact(?:/)?$"
+    },
+    {
+      "page": "/csr",
+      "regex": "^/csr(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/csr(?:/)?$"
+    },
+    {
+      "page": "/news",
+      "regex": "^/news(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/news(?:/)?$"
+    },
+    {
+      "page": "/operations",
+      "regex": "^/operations(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/operations(?:/)?$"
+    },
+    {
+      "page": "/operations/gas",
+      "regex": "^/operations/gas(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/operations/gas(?:/)?$"
+    },
+    {
+      "page": "/operations/offshore",
+      "regex": "^/operations/offshore(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/operations/offshore(?:/)?$"
+    },
+    {
+      "page": "/operations/onshore",
+      "regex": "^/operations/onshore(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/operations/onshore(?:/)?$"
+    },
+    {
+      "page": "/services",
+      "regex": "^/services(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments",
+    "clientParamParsing": false,
+    "dynamicRSCPrerender": false
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

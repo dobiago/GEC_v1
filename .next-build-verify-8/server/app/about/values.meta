@@ -1,0 +1,18 @@
+{
+  "status": 307,
+  "headers": {
+    "location": "/about#strategic-focus",
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/about/layout,_N_T_/about/values/layout,_N_T_/about/values/page,_N_T_/about/values"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/about/values/__PAGE__",
+    "/about/values",
+    "/about",
+    "/_index",
+    "/_head"
+  ]
+}
