@@ -77,7 +77,11 @@ export const company = {
   footerText: "\u00A9 GEC Petroleum Development Company 2026",
 }
 
-export const navigation: NavigationItem[] = [
+export const contentVisibility = {
+  news: false,
+} as const
+
+const allNavigationItems: NavigationItem[] = [
   { href: "/", label: "Home" },
   {
     href: "/about",
@@ -103,6 +107,10 @@ export const navigation: NavigationItem[] = [
   { href: "/news", label: "News" },
   { href: "/contact", label: "Contact" },
 ]
+
+export const navigation: NavigationItem[] = allNavigationItems.filter(
+  (item) => contentVisibility.news || item.href !== "/news",
+)
 
 export const homeStats: Stat[] = [
   { label: "Founded 1991", value: "35 years" },

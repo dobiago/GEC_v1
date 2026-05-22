@@ -2,7 +2,7 @@ import Link from "next/link"
 
 import { PlatformTimeline } from "@/components/ui/platform-timeline"
 import { WaveHalftone } from "@/components/ui/wave-halftone"
-import { company, homeSections, homeStats, newsItems } from "@/lib/site-data"
+import { company, contentVisibility, homeSections, homeStats, newsItems } from "@/lib/site-data"
 
 export default function Home() {
   return (
@@ -61,43 +61,45 @@ export default function Home() {
 
       <PlatformTimeline />
 
-      <section className="px-6 pb-20 md:px-12 md:pb-28">
-        <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-          <h2 className="text-3xl font-semibold tracking-[-0.05em] text-slate-950 sm:text-4xl">
-            News
-          </h2>
-          <Link
-            href="/news"
-            className="text-sm font-semibold uppercase tracking-[0.16em] text-[#D8271B] transition hover:text-[#3A001E]"
-          >
-            View all news
-          </Link>
-        </div>
-
-        <div className="mt-10 grid gap-6 lg:grid-cols-3">
-          {newsItems.map((item) => (
-            <article
-              key={item.title}
-              className="rounded-sm border border-slate-200 bg-[#EDE9D0]/80 p-6 shadow-[0_24px_70px_rgba(58,0,30,0.08)]"
+      {contentVisibility.news ? (
+        <section className="px-6 pb-20 md:px-12 md:pb-28">
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+            <h2 className="text-3xl font-semibold tracking-[-0.05em] text-slate-950 sm:text-4xl">
+              News
+            </h2>
+            <Link
+              href="/news"
+              className="text-sm font-semibold uppercase tracking-[0.16em] text-[#D8271B] transition hover:text-[#3A001E]"
             >
-              <div className="flex items-center justify-between gap-3 text-xs uppercase tracking-[0.18em] text-slate-500">
-                <span>{item.category}</span>
-                <span>{item.date}</span>
-              </div>
-              <h2 className="mt-5 text-2xl font-semibold tracking-[-0.04em] text-slate-950">
-                {item.title}
-              </h2>
-              <p className="mt-4 text-base leading-7 text-slate-600">{item.excerpt}</p>
-              <Link
-                href={item.href}
-                className="mt-6 inline-flex text-sm font-semibold uppercase tracking-[0.16em] text-[#D8271B] transition hover:text-[#3A001E]"
+              View all news
+            </Link>
+          </div>
+
+          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+            {newsItems.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-sm border border-slate-200 bg-[#EDE9D0]/80 p-6 shadow-[0_24px_70px_rgba(58,0,30,0.08)]"
               >
-                Read more
-              </Link>
-            </article>
-          ))}
-        </div>
-      </section>
+                <div className="flex items-center justify-between gap-3 text-xs uppercase tracking-[0.18em] text-slate-500">
+                  <span>{item.category}</span>
+                  <span>{item.date}</span>
+                </div>
+                <h2 className="mt-5 text-2xl font-semibold tracking-[-0.04em] text-slate-950">
+                  {item.title}
+                </h2>
+                <p className="mt-4 text-base leading-7 text-slate-600">{item.excerpt}</p>
+                <Link
+                  href={item.href}
+                  className="mt-6 inline-flex text-sm font-semibold uppercase tracking-[0.16em] text-[#D8271B] transition hover:text-[#3A001E]"
+                >
+                  Read more
+                </Link>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
     </main>
   )
 }

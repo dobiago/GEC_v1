@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 
 import { timelineEntries } from "@/lib/site-data"
 import { TimelineYear } from "@/components/ui/timeline-year"
@@ -15,15 +16,19 @@ export function PlatformTimeline() {
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-white" />
-        <div className="absolute inset-x-0 bottom-0 h-[40%] bg-gradient-to-b from-transparent to-white" />
       </div>
 
-      <div className="relative -mt-[16vh] px-6 pb-20 md:-mt-[24vh] md:px-12 md:pb-28">
-        <div className="mx-auto mb-10 max-w-6xl">
+      <div className="relative bg-[#EDE9D0] px-6 py-12 md:px-12 md:py-16">
+        <div className="mx-auto mb-8 flex max-w-6xl items-center justify-between gap-4">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-amber-600">
             History
           </p>
+          <Link
+            href="/about"
+            className="inline-flex rounded-sm bg-[#D8271B] px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-white transition hover:bg-[#3A001E]"
+          >
+            Learn More
+          </Link>
         </div>
 
         <div className="mx-auto hidden max-w-7xl lg:block">
