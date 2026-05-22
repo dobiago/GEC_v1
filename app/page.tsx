@@ -1,13 +1,24 @@
 import Link from "next/link"
 
+import { HeroImageCarousel } from "@/components/ui/hero-image-carousel"
 import { PlatformTimeline } from "@/components/ui/platform-timeline"
 import { WaveHalftone } from "@/components/ui/wave-halftone"
 import { company, contentVisibility, homeSections, homeStats, newsItems } from "@/lib/site-data"
 
+const heroCarouselImages = [
+  "/heroimages/carosel-image1.png",
+  "/heroimages/carosel-image2.png",
+  "/heroimages/carosel-image3.png",
+  "/heroimages/carosel-image4.png",
+  "/heroimages/carosel-image5.png",
+  "/heroimages/carosel-image6.png",
+  "/heroimages/carosel-image7.png",
+]
+
 export default function Home() {
   return (
     <main className="overflow-hidden pt-[76px] text-slate-900">
-      <section className="relative isolate min-h-[90vh] px-6 pb-18 pt-16 md:px-12 md:pb-24 md:pt-24">
+      <section className="relative isolate flex min-h-[90vh] flex-col px-6 pt-16 md:px-12 md:pt-22 lg:min-h-[96vh] xl:min-h-[100vh]">
         <div className="absolute inset-x-0 top-0 h-[520px] bg-[radial-gradient(circle_at_15%_20%,rgba(216,39,27,0.12),transparent_28%),radial-gradient(circle_at_80%_0%,rgba(223,154,139,0.15),transparent_25%),linear-gradient(180deg,rgba(237,233,208,0.65),rgba(237,233,208,0))]" />
         <WaveHalftone
           className="absolute inset-0 z-0"
@@ -15,13 +26,13 @@ export default function Home() {
           waveColor="rgba(200,200,200,0.7)"
           interactive={true}
         />
-        <div className="relative z-10 flex h-full min-h-[90vh] items-center">
+        <div className="relative z-10 flex min-h-[58vh] flex-1 items-center pb-10 md:min-h-[60vh] md:pb-12 lg:min-h-[62vh] lg:pb-16 xl:min-h-[64vh] xl:pb-20">
           <div className="max-w-2xl space-y-8">
             <div className="space-y-5">
-              <h1 className="max-w-4xl text-5xl font-semibold tracking-[-0.07em] text-slate-950 sm:text-6xl lg:text-7xl">
+              <h1 className="max-w-4xl text-4xl font-semibold tracking-[-0.07em] text-slate-950 sm:text-5xl lg:text-6xl">
                 {homeSections.hero.title}
               </h1>
-              <p className="text-xl font-medium text-amber-700 sm:text-2xl">
+              <p className="text-lg font-medium text-amber-700 sm:text-xl lg:text-2xl">
                 {company.heroTagline}
               </p>
               <p className="max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
@@ -44,6 +55,10 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <HeroImageCarousel
+          images={heroCarouselImages}
+          className="pb-18 md:pb-24"
+        />
       </section>
 
       <section className="px-6 pb-18 md:px-12 md:pb-24">

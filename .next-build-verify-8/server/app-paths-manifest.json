@@ -1,0 +1,23 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/about/careers/page": "app/about/careers/page.js",
+  "/about/governance/page": "app/about/governance/page.js",
+  "/about/page": "app/about/page.js",
+  "/about/strategic-focus/page": "app/about/strategic-focus/page.js",
+  "/about/team/[person]/page": "app/about/team/[person]/page.js",
+  "/about/team/page": "app/about/team/page.js",
+  "/about/values/page": "app/about/values/page.js",
+  "/api/contact/route": "app/api/contact/route.js",
+  "/contact/page": "app/contact/page.js",
+  "/csr/page": "app/csr/page.js",
+  "/news/page": "app/news/page.js",
+  "/operations/gas/page": "app/operations/gas/page.js",
+  "/operations/offshore/[asset]/page": "app/operations/offshore/[asset]/page.js",
+  "/operations/offshore/page": "app/operations/offshore/page.js",
+  "/operations/onshore/[asset]/page": "app/operations/onshore/[asset]/page.js",
+  "/operations/onshore/page": "app/operations/onshore/page.js",
+  "/operations/page": "app/operations/page.js",
+  "/page": "app/page.js",
+  "/services/page": "app/services/page.js"
+}

@@ -1,0 +1,18 @@
+{
+  "status": 307,
+  "headers": {
+    "location": "/about#careers",
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/about/layout,_N_T_/about/careers/layout,_N_T_/about/careers/page,_N_T_/about/careers"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/about/careers/__PAGE__",
+    "/about/careers",
+    "/about",
+    "/_index",
+    "/_head"
+  ]
+}

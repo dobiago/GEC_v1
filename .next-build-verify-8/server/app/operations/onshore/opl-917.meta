@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/operations/layout,_N_T_/operations/onshore/layout,_N_T_/operations/onshore/[asset]/layout,_N_T_/operations/onshore/[asset]/page,_N_T_/operations/onshore/opl-917"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/operations/onshore/$d$asset/__PAGE__",
+    "/operations/onshore/$d$asset",
+    "/operations/onshore",
+    "/operations",
+    "/_index",
+    "/_head"
+  ]
+}
