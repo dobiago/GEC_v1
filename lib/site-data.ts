@@ -71,7 +71,7 @@ export const company = {
   overview:
     "GEC Petroleum Development Company is a Nigerian indigenous energy company developing a focused portfolio of offshore and onshore assets while building long-term value through disciplined operations, partnerships, and gas-led growth.",
   office: {
-    email: "info@gecpetroleum.com",
+    email: "info@globalenergyco.com",
     enquiries: "Commercial, technical, partnership and media enquiries",
   },
   footerText: "\u00A9 GEC Petroleum Development Company 2026",
@@ -91,7 +91,7 @@ const allNavigationItems: NavigationItem[] = [
       { href: "/about#strategic-focus", label: "Strategic Focus" },
       { href: "/about#our-team", label: "Our Team" },
       { href: "/about#timeline", label: "History" },
-      { href: "/about#careers", label: "Careers" },
+      { href: "/about#careers", label: "People" },
     ],
   },
   {
@@ -401,8 +401,13 @@ export const csrSections: CSRSection[] = [
 
 export const contactHighlights = [
   {
+    label: "Address",
+    value:
+      "GEC Petroleum Development Company Plc\nWing A, Floor 7, Architects Place, No.2, Idowu Taylor Street,\nVictoria Island - Lagos, Nigeria",
+  },
+  {
     label: "General enquiries",
-    value: "info@gecpetroleum.com",
+      value: "info@globalenergyco.com",
   },
   {
     label: "Media & partnership requests",
@@ -410,7 +415,7 @@ export const contactHighlights = [
   },
   {
     label: "Careers submissions",
-    value: "hr@gecpetroleum.com",
+    value: "mdo@globalenergyco.com",
   },
 ]
 

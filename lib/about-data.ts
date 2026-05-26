@@ -25,7 +25,7 @@ export const aboutNavigationItems: AboutNavItem[] = [
   { id: "strategic-focus", title: "Strategic Focus", href: "#strategic-focus" },
   { id: "our-team", title: "Our Team", href: "#our-team" },
   { id: "timeline", title: "History", href: "#timeline" },
-  { id: "careers", title: "Careers", href: "#careers" },
+  { id: "careers", title: "People", href: "#careers" },
 ]
 
 export const aboutSections: AboutSection[] = [
